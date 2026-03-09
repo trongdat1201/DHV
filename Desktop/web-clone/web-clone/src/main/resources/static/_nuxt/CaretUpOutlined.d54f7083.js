@@ -1,0 +1,56 @@
+import { bc as i } from "./entry.8aa394d7.js";
+import { z as u } from "./swiper-vue.d5cda4d1.js";
+var l = {
+  icon: {
+    tag: "svg",
+    attrs: { viewBox: "0 0 1024 1024", focusable: "false" },
+    children: [
+      {
+        tag: "path",
+        attrs: {
+          d: "M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z",
+        },
+      },
+    ],
+  },
+  name: "caret-up",
+  theme: "outlined",
+};
+const p = l;
+function o(r) {
+  for (var t = 1; t < arguments.length; t++) {
+    var e = arguments[t] != null ? Object(arguments[t]) : {},
+      n = Object.keys(e);
+    typeof Object.getOwnPropertySymbols == "function" &&
+      (n = n.concat(
+        Object.getOwnPropertySymbols(e).filter(function (a) {
+          return Object.getOwnPropertyDescriptor(e, a).enumerable;
+        })
+      )),
+      n.forEach(function (a) {
+        f(r, a, e[a]);
+      });
+  }
+  return r;
+}
+function f(r, t, e) {
+  return (
+    t in r
+      ? Object.defineProperty(r, t, {
+          value: e,
+          enumerable: !0,
+          configurable: !0,
+          writable: !0,
+        })
+      : (r[t] = e),
+    r
+  );
+}
+var c = function (t, e) {
+  var n = o({}, t, e.attrs);
+  return u(i, o({}, n, { icon: p }), null);
+};
+c.displayName = "CaretUpOutlined";
+c.inheritAttrs = !1;
+const d = c;
+export { d as _ };

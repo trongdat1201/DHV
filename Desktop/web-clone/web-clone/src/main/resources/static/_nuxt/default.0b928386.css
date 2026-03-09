@@ -1,0 +1,9 @@
+.layout-default[data-v-78b9ef6d] {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.layout-default .main-body[data-v-78b9ef6d] {
+  flex: 1;
+  padding-top: 79px;
+}

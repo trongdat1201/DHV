@@ -1,0 +1,142 @@
+.education-program__list-program__item[data-v-c329fdbf] {
+  transition: all 0.5s ease;
+}
+.education-program__list-program__item .thumbnail[data-v-c329fdbf] {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 50% auto;
+}
+@media screen and (min-width: 768px) {
+  .education-program__list-program__item .thumbnail[data-v-c329fdbf] {
+    background-position: bottom;
+    background-size: auto 90%;
+  }
+}
+.education-program__list-program__item .content[data-v-c329fdbf] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .education-program__list-program__item .content[data-v-c329fdbf] {
+    justify-content: flex-start;
+    padding-bottom: 2rem;
+    padding-top: 5rem;
+  }
+}
+.education-program__list-program__item .content__title[data-v-c329fdbf] {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+  display: -webkit-box;
+  font-size: 1.5714285714rem;
+  overflow: hidden;
+  padding-inline: 0.5714285714rem;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+@media screen and (min-width: 992px) {
+  .education-program__list-program__item .content__title[data-v-c329fdbf] {
+    font-size: 1.4285714286rem;
+  }
+}
+.education-program__list-program__item .content a[data-v-c329fdbf]:hover {
+  color: #ccc;
+}
+.education-program__list-program__item .content__major[data-v-c329fdbf] {
+  flex: 1;
+  font-size: 1.1428571429rem;
+  line-height: 1.4;
+  overflow: auto;
+}
+.education-program__list-program__item .content__major a[data-v-c329fdbf] {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.education-program__list-program__item
+  .content__major
+  a[data-v-c329fdbf]:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.education-program__list-program__item.active .thumbnail[data-v-c329fdbf] {
+  background-position: bottom;
+  background-size: auto 90%;
+}
+@media screen and (min-width: 768px) {
+  .education-program__list-program__item.active .thumbnail[data-v-c329fdbf] {
+    background-position: bottom;
+    background-size: auto 90%;
+  }
+}
+.education-program__list-program__item.active .content[data-v-c329fdbf] {
+  height: 40%;
+  padding-top: 1rem;
+  text-align: left;
+  width: 70%;
+}
+.education-program__list-program__item:not(.active)
+  .content-wrapper[data-v-c329fdbf] {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background: rgba(23, 37, 82, 0.502);
+}
+.education-program__introduction__header--left .label[data-v-8ac1819d] {
+  font-size: clamp(1.2857142857rem, 0.376vw + 1.042rem, 1.4285714286rem);
+}
+.education-program__introduction__header--left .program-name[data-v-8ac1819d] {
+  font-size: clamp(1.8571428571rem, 3.38vw + 0.809rem, 2.8571428571rem);
+}
+.education-program__introduction__header--right[data-v-8ac1819d] {
+  font-size: clamp(0.8571428571rem, 0.376vw + 0.757rem, 1.1428571429rem);
+  line-height: 1.6;
+  max-height: 15rem;
+  overflow: auto;
+  padding-right: 0.5714285714rem;
+}
+.education-program__introduction[data-v-8ac1819d] .ant-collapse-content,
+.education-program__introduction[data-v-8ac1819d] .ant-collapse-header {
+  color: #333;
+  font-weight: 400;
+  padding-inline: 0;
+}
+.education-program__introduction[data-v-8ac1819d] .ant-collapse-header {
+  align-items: center;
+  font-size: clamp(1.1428571429rem, 0.563vw + 0.849rem, 1.4285714286rem);
+  padding-block: 0.5714285714rem;
+}
+.education-program__introduction[data-v-8ac1819d]
+  .ant-collapse-header
+  .major-name {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.education-program__introduction[data-v-8ac1819d] .ant-collapse-content-box {
+  padding-top: 0 !important;
+}
+.education-program__introduction[data-v-8ac1819d]
+  .ant-collapse-content
+  .major-description {
+  max-height: 30rem;
+  overflow: auto;
+}
+.education-program__introduction[data-v-8ac1819d]
+  .ant-collapse-item-active
+  .ant-collapse-header {
+  color: var(--theme-primary-color);
+}
+.education-program__introduction[data-v-8ac1819d]
+  .ant-collapse-item-active
+  .ant-collapse-header-text {
+  font-weight: 600;
+}

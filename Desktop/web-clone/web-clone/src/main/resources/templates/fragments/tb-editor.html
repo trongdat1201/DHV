@@ -1,0 +1,23 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="tbEditorHead">
+        <link rel="stylesheet" href="/tb/tb-editor.css" />
+        <script referrerpolicy="origin" src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.2/tinymce.min.js"></script>
+    </th:block>
+
+    <th:block th:fragment="tbEditorBody">
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            window.__TB_IS_ADMIN = /*[[${isAdmin}]]*/ false;
+            window.__TB_SETTINGS = /*[[${settings}]]*/ {};
+            /*]]>*/
+        </script>
+
+        <script src="/tb/tb-ui.js"></script>
+
+        <div id="tb-admin-bar" class="tb-admin-bar" th:if="${isAdmin}">
+            <button id="btnToggleEdit" class="tb-admin-btn" type="button">Bật Edit mode</button>
+        </div>
+
+        <script defer src="/tb/tb-editor.js"></script>
+    </th:block>
+</th:block>

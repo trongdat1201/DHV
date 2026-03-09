@@ -1,0 +1,67 @@
+import { _ as i } from "./AppBreadcrumb.vue.7e47a49f.js";
+import { _ as p, a as _, b as a } from "./Activity.9bd76af7.js";
+import { _ as m } from "./entry.8aa394d7.js";
+import {
+  Q as r,
+  a0 as c,
+  j as s,
+  R as u,
+  z as o,
+  F as f,
+} from "./swiper-vue.d5cda4d1.js";
+import "./AppBreadcrumb.73e131db.js";
+import "./nuxt-link.58f89fff.js";
+import "./client-only.42178d49.js";
+import "./breadcrumb.bc5fa9d7.js";
+import "./transform-translate-faculty.c0e2ceae.js";
+import "./IFaculty.97f6e59d.js";
+import "./JsonContent.828a79a5.js";
+import "./AppPageIntroduction.270416f3.js";
+import "./index.92524a9b.js";
+import "./AppTitleLogo.43818f33.js";
+import "./NuxtImg.vue.916c2d60.js";
+import "./breakpoints-screen.85b51075.js";
+import "./index.97fcacb7.js";
+import "./index.c079fb5a.js";
+import "./omitBy.06454d55.js";
+import "./_baseIteratee.825e9cf8.js";
+import "./_baseIsEqual.42871e3f.js";
+import "./CaretUpOutlined.d54f7083.js";
+import "./index.d81f9ea4.js";
+import "./motion.d46d0bbf.js";
+import "./RightOutlined.f501bedb.js";
+import "./firstNotUndefined.29a740f3.js";
+import "./collapseMotion.3a38b156.js";
+import "./devWarning.0cb68424.js";
+import "./index.a66880e0.js";
+import "./Trigger.dd535606.js";
+import "./isVisible.48fa23e0.js";
+import "./PortalWrapper.438f60b2.js";
+import "./zoom.4c1ddb0e.js";
+import "./PlusOutlined.ea401e65.js";
+import "./MinusOutlined.0c85195f.js";
+const l = {};
+function d(e, n) {
+  const t = p;
+  return r(), c(t);
+}
+const x = m(l, [["render", d]]),
+  v = {};
+function y(e, n) {
+  const t = _;
+  return r(), c(t);
+}
+const F = m(v, [["render", y]]),
+  $ = {};
+function B(e, n) {
+  const t = a;
+  return r(), c(t);
+}
+const g = m($, [["render", B]]),
+  nt = s({
+    __name: "index",
+    setup(e) {
+      return (n, t) => (r(), u(f, null, [o(i), o(x), o(F), o(g)], 64));
+    },
+  });
+export { nt as default };

@@ -1,0 +1,50 @@
+.common-btn[data-v-d34926a3] {
+  align-items: center;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  color: var(--theme-primary-color);
+  display: flex;
+  font-size: 0.8571428571rem;
+  font-weight: 700;
+  gap: 10px;
+  justify-content: center;
+  line-height: 24px;
+  min-height: 2.7rem;
+  outline: none !important;
+  padding: 11px 22px;
+}
+.common-btn[data-v-d34926a3] span {
+  line-height: normal;
+}
+.common-btn[data-v-d34926a3]:after {
+  display: none;
+}
+.common-btn[data-v-d34926a3]:hover {
+  color: var(--theme-primary-color);
+}
+.common-btn svg[data-v-d34926a3] {
+  width: 0.9rem;
+}
+@media screen and (min-width: 576px) {
+  .common-btn[data-v-d34926a3] {
+    font-size: 1rem;
+    min-height: 3rem;
+    padding: 1rem 2.14rem;
+  }
+  .common-btn svg[data-v-d34926a3] {
+    width: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .common-btn[data-v-d34926a3] {
+    font-size: 1rem;
+    min-height: 3.6rem;
+    padding: 1rem 2.14rem;
+  }
+}
+.common-btn.primary[data-v-d34926a3] {
+  background: var(--theme-primary-color);
+  color: #fff;
+}

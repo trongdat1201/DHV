@@ -1,0 +1,374 @@
+/* ================= TB Shared Editor UI ================= */
+
+/* Admin bar must always be clickable and on top */
+.tb-admin-bar{
+  position: fixed !important;
+  bottom: 16px !important;
+  right: 16px !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: 2147483645;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.tb-admin-btn{
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body.tb-edit-mode .tb-admin-btn{
+  border-color: rgba(0,0,0,.45);
+}
+
+/* ================= Student Research Topic Admin UI ================= */
+
+/* Add button container (hidden unless edit mode) */
+#tb-student-topic-admin{
+  display: none;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+body.tb-edit-mode #tb-student-topic-admin{
+  display: flex;
+}
+
+/* Delete button on each topic item (hidden unless edit mode) */
+.tb-topic-item{
+  position: relative;
+}
+
+/* Space between topic cards (dynamic items only) */
+#tb-student-topic-dynamic .tb-topic-item{
+  margin-bottom: 24px;
+}
+
+#tb-student-topic-dynamic .tb-topic-item:last-child{
+  margin-bottom: 0;
+}
+
+.tb-topic-actions{
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
+  gap: 8px;
+}
+
+body.tb-edit-mode .tb-topic-actions{
+  display: inline-flex;
+}
+
+.tb-topic-delete-btn{
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.tb-topic-edit-btn{
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* Modal overlay for creating topics */
+#tb-topic-overlay{
+  position: fixed !important;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#tb-topic-modal{
+  width: min(1100px, 96vw);
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+#tb-topic-modal .tb-modal-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+#tb-topic-modal .tb-modal-title{
+  font-weight: 700;
+}
+
+#tb-topic-modal .tb-modal-actions{
+  display: flex;
+  gap: 8px;
+}
+
+#tb-topic-modal .tb-btn{
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#tb-topic-modal .tb-btn.primary{
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+#tb-topic-modal .tb-modal-body{
+  padding: 14px;
+}
+
+#tb-topic-modal .tb-label{
+  display: block;
+  font-size: 12px;
+  color: rgba(0,0,0,.65);
+  margin: 10px 0 6px;
+}
+
+#tb-topic-modal .tb-input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+  outline: none;
+}
+
+#tb-topic-modal textarea.tb-input{
+  resize: vertical;
+}
+
+#tb-topic-modal .tb-file{
+  display: block;
+}
+
+#tb-topic-modal .tb-muted{
+  color: rgba(0,0,0,.55);
+  font-size: 13px;
+}
+
+#tb-topic-modal .tb-topic-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 992px){
+  #tb-topic-modal .tb-topic-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+#tb-topic-modal .tb-topic-image-row{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 768px){
+  #tb-topic-modal .tb-topic-image-row{
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+#tb-topic-modal .tb-topic-preview{
+  margin-top: 10px;
+  border: 1px dashed rgba(0,0,0,.2);
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tb-topic-modal .tb-topic-preview img{
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Highlight editable areas in edit mode */
+body.tb-edit-mode [data-setting-key]{
+  outline: 1px dashed rgba(37,99,235,.55);
+  outline-offset: 2px;
+  cursor: pointer;
+}
+
+/* Do not outline inside admin bar / overlay / tinymce */
+body.tb-edit-mode #tb-admin-bar [data-setting-key],
+#tb-editor-overlay [data-setting-key],
+.tox [data-setting-key]{
+  outline: none !important;
+}
+
+/* Overlay + modal */
+#tb-editor-overlay{
+  position: fixed !important;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#tb-editor-modal{
+  width: min(1100px, 96vw);
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+#tb-editor-modal .tb-modal-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+#tb-editor-modal .tb-modal-title{
+  font-weight: 700;
+}
+
+#tb-editor-modal .tb-modal-actions{
+  display: flex;
+  gap: 8px;
+}
+
+#tb-editor-modal .tb-btn{
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+#tb-editor-modal .tb-btn.primary{
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+#tb-editor-modal .tb-modal-body{
+  padding: 12px 14px;
+}
+
+/* Image modal helpers (match sample UI) */
+#tb-editor-modal.tb-image-modal .tb-image-body{
+  display: grid;
+  gap: 10px;
+}
+
+#tb-editor-modal.tb-image-modal .tb-muted{
+  font-size: 13px;
+  color: rgba(0,0,0,.65);
+}
+
+#tb-editor-modal.tb-image-modal .tb-image-row{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+#tb-editor-modal.tb-image-modal .tb-current-box{
+  width: 180px;
+  height: 120px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  flex: 0 0 auto;
+}
+
+#tb-editor-modal.tb-image-modal .tb-current-box img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+#tb-editor-modal.tb-image-modal .tb-image-fields{
+  flex: 1;
+  min-width: 0;
+}
+
+#tb-editor-modal.tb-image-modal .tb-label{
+  display: block;
+  font-size: 13px;
+  color: rgba(0,0,0,.65);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+#tb-editor-modal.tb-image-modal .tb-input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+#tb-editor-modal.tb-image-modal .tb-file{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+#tb-editor-modal.tb-image-modal .tb-spacer{
+  height: 10px;
+}
+
+#tb-editor-modal.tb-image-modal .tb-help{
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(0,0,0,.55);
+}
+
+/* TinyMCE z-index helpers */
+.tox.tox-tinymce-aux, .tox .tox-dialog-wrap{
+  z-index: 2147483647 !important;
+}
+
+/* Toast */
+#tb-toast{
+  position: fixed !important;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2147483647;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(17,17,17,.92);
+  color: #fff;
+  font-size: 13px;
+  max-width: min(420px, 92vw);
+  display: none;
+}

@@ -1,0 +1,29 @@
+h2[data-v-f97399ec] {
+  font-family: Unbounded, sans-serif;
+  margin-bottom: 0;
+}
+.logo[data-v-f97399ec] {
+  aspect-ratio: 80/120;
+  left: 0;
+  opacity: 0.05;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.8571428571rem;
+}
+@media screen and (min-width: 992px) {
+  .logo[data-v-f97399ec] {
+    width: 4.2857142857rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .logo[data-v-f97399ec] {
+    width: 5.7142857143rem;
+  }
+}
+.logo img[data-v-f97399ec] {
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+}

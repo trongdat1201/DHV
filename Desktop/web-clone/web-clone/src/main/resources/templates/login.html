@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #1F3A56;
+      --border: #e5e7eb;
+      --muted: #6b7280;
+      --text: #111827;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      padding: 18px 24px;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      background: #fff;
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo img {
+      width: 72px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-text .line1 {
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .brand-text .line2 {
+      font-size: 12px;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+      padding: 34px 34px 26px 34px;
+    }
+
+    .card-top {
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+    }
+
+    .card-logo {
+      width: 180px;
+      max-width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .card-logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .title {
+      margin: 0;
+      color: var(--primary);
+      font-size: 22px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .subtitle {
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .form {
+      margin-top: 20px;
+    }
+
+    .field {
+      margin-top: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .input:focus {
+      border-color: rgba(31, 58, 86, 0.55);
+      box-shadow: 0 0 0 3px rgba(31, 58, 86, 0.12);
+    }
+
+    .password-wrap {
+      position: relative;
+    }
+
+    .toggle-eye {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      padding: 8px;
+      color: #9ca3af;
+      display: grid;
+      place-items: center;
+    }
+
+    .toggle-eye:hover {
+      color: var(--primary);
+    }
+
+    .row-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      user-select: none;
+    }
+
+    .remember input {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+    }
+
+    .forgot {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .forgot:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 18px;
+      background: var(--primary);
+      color: #fff;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn svg {
+      flex: 0 0 auto;
+    }
+
+    .btn:hover {
+      filter: brightness(0.95);
+    }
+
+    .err {
+      color: #c00;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .support {
+      margin-top: 20px;
+      padding-top: 16px;
+    }
+
+    .divider {
+      border-top: 1px dashed var(--border);
+      position: relative;
+      margin: 14px 0;
+    }
+
+    .divider span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 0 10px;
+      color: #9ca3af;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .support p {
+      margin: 10px 0 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .support a {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .support a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      padding: 18px 12px;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    /* Tìm class .btn và reset lại các thuộc tính chữ */
+    .btn {
+      /* 1. Quan trọng nhất: Tắt bóng chữ gây nhòe */
+      text-shadow: none !important;
+
+      /* 2. Đảm bảo font chữ hỗ trợ tiếng Việt tốt (như Roboto, Arial...) */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+
+      /* 3. Căn chỉnh lại độ đậm cho dễ đọc */
+      font-weight: 600 !important;
+
+      /* 4. Tắt các hiệu ứng biến hình nếu có */
+      transform: none !important;
+    }
+
+    /* Đề phòng hiệu ứng nằm ở thẻ span bên trong */
+    .btn span {
+      text-shadow: none !important;
+    }
+
+    /* Đề phòng hiệu ứng "bóng ma" do ::before hoặc ::after tạo ra */
+    .btn::before,
+    .btn::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 26px 18px 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand-logo" aria-hidden="true">
+        <img src="/images/logoheader.jpg" alt="DHV" />
+      </div>
+      <div class="brand-text">
+        <div class="line1">Trường Đại Học Hùng Vương TP.HCM</div>
+        
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="card" role="region" aria-label="Admin Login">
+      <div class="card-top">
+        <div class="card-logo" aria-hidden="true">
+          <img src="/images/logoheader.jpg" alt="DHV" />
+        </div>
+        <h1 class="title">Đăng Nhập Admin</h1>
+        <p class="subtitle">Quản lý hệ thống Trường Đại Học Hùng Vương TP.HCM</p>
+      </div>
+
+      <form class="form" th:action="@{/login}" method="post" autocomplete="on">
+        <div class="field">
+          <label for="username">Tên đăng nhập</label>
+          <input id="username" class="input" name="username" placeholder="Nhập tên đăng nhập" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Mật khẩu</label>
+          <div class="password-wrap">
+            <input id="password" class="input" name="password" type="password" placeholder="Nhập mật khẩu" required />
+            <button type="button" class="toggle-eye" id="togglePassword" aria-label="Hiện/ẩn mật khẩu">
+              <svg id="eyeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 5C5 5 1 12 1 12s4 7 11 7 11-7 11-7-4-7-11-7Z" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="row-options">
+          <label class="remember">
+            <input type="checkbox" name="remember-me" />
+            <span>Ghi nhớ tôi</span>
+          </label>
+          <a class="forgot" href="#" onclick="return false;">Quên mật khẩu?</a>
+        </div>
+
+        <button
+          class="btn flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#1F3A56] text-white hover:opacity-90 transition-all"
+          type="submit">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+
+          <span class="font-semibold text-base">Đăng Nhập</span>
+        </button>
+
+        <div class="err" th:if="${param.error}">Sai username hoặc password.</div>
+        <div class="err" th:if="${param.logout}">Đã đăng xuất.</div>
+
+        <!-- <div class="support">
+          <div class="divider"><span>Hỗ trợ</span></div>
+          <p>Nếu bạn gặp vấn đề với đăng nhập</p>
+          <a href="#" onclick="return false;">Liên hệ bộ phận IT</a>
+        </div> -->
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">© 2023 Trường Đại Học Hùng Vương TP.HCM </footer>
+
+  <script>
+    (function () {
+      const toggleBtn = document.getElementById('togglePassword');
+      const pwd = document.getElementById('password');
+      if (!toggleBtn || !pwd) return;
+
+      toggleBtn.addEventListener('click', function () {
+        const isHidden = pwd.getAttribute('type') === 'password';
+        pwd.setAttribute('type', isHidden ? 'text' : 'password');
+      });
+    })();
+  </script>
+</body>
+
+</html>

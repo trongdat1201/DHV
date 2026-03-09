@@ -1,0 +1,25 @@
+.flag-img[data-v-33a0daa0] {
+  aspect-ratio: 49/38;
+  border-radius: 0.2857142857rem;
+  display: inline-block;
+  width: 2rem;
+}
+.menu-locale-wrapper[data-v-33a0daa0] {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s ease-in-out;
+  width: 5.5rem;
+}
+@media screen and (min-width: 992px) {
+  .menu-locale-wrapper[data-v-33a0daa0] {
+    width: 100%;
+  }
+}
+.menu-locale-wrapper.active[data-v-33a0daa0] {
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-locale-item.active[data-v-33a0daa0] {
+  background-color: #e6f4ff;
+  font-weight: 600;
+}

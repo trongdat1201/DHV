@@ -1,0 +1,162 @@
+.article-item[data-v-b359c3d6] {
+  background: #fff;
+  box-shadow: 0 4px 14px #0000001a;
+  cursor: default;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 12rem;
+  padding: 1.25rem 0.85rem 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.article-item[data-v-b359c3d6]:hover {
+  background: #f2f2f2;
+  color: unset;
+}
+.article-item__img[data-v-b359c3d6] {
+  aspect-ratio: 212/182;
+  width: 23%;
+}
+.article-item__img img[data-v-b359c3d6] {
+  border: 1px solid #f0f0f0;
+  display: inline-block;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+.article-item__content[data-v-b359c3d6] {
+  flex: 1;
+  padding-left: 0.6rem;
+}
+.article-item__content__category[data-v-b359c3d6] {
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+.article-item__content__category p[data-v-b359c3d6] {
+  -webkit-line-clamp: 1;
+}
+.article-item__content__category p[data-v-b359c3d6],
+.article-item__content__title[data-v-b359c3d6] {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.article-item__content__title[data-v-b359c3d6] {
+  -webkit-line-clamp: 2;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 992px) {
+  .article-item__content__title[data-v-b359c3d6] {
+    font-size: 0.8571428571rem;
+  }
+}
+.article-item__content__description[data-v-b359c3d6] {
+  font-size: 0.8571428571rem;
+  font-weight: 500;
+  line-height: 1.4285714286rem;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+.article-item__content__description[data-v-b359c3d6] p,
+.article-item__content__description li[data-v-b359c3d6],
+.article-item__content__description span[data-v-b359c3d6] {
+  font-size: 1rem;
+}
+.article-item__content__date[data-v-b359c3d6] {
+  align-items: center;
+  display: flex;
+  font-size: 0.8571428571rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 374px) {
+  .article-item[data-v-b359c3d6] {
+    min-height: 10rem;
+  }
+  .article-item__img[data-v-b359c3d6] {
+    width: 25%;
+  }
+  .article-item__content[data-v-b359c3d6] {
+    padding-left: 0.6rem;
+  }
+  .article-item__content__category svg[data-v-b359c3d6] {
+    width: 10px;
+  }
+  .article-item__content__category a[data-v-b359c3d6],
+  .article-item__content__category p[data-v-b359c3d6] {
+    font-size: 9px;
+  }
+  .article-item__content__title[data-v-b359c3d6] {
+    font-size: 0.8571428571rem;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 374px) and (min-width: 992px) {
+  .article-item__content__title[data-v-b359c3d6] {
+    font-size: 0.7142857143rem;
+  }
+}
+@media screen and (max-width: 374px) {
+  .article-item__content__description[data-v-b359c3d6] {
+    font-size: 0.8571428571rem;
+    line-height: 1.2857142857rem;
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .article-item__content__category[data-v-b359c3d6] {
+    line-height: 1.7142857143rem;
+  }
+  .article-item__content__title[data-v-b359c3d6] {
+    font-size: 1.1428571429rem;
+    margin: 0.75rem 0;
+  }
+  .article-item__content__description[data-v-b359c3d6] {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .article-item[data-v-b359c3d6] {
+    padding: 0;
+  }
+  .article-item__img[data-v-b359c3d6] {
+    width: 35%;
+  }
+  .article-item__img img[data-v-b359c3d6] {
+    border: none;
+  }
+  .article-item__content[data-v-b359c3d6] {
+    padding: 0.5rem 1.25rem 0.5rem 1rem;
+  }
+  .article-item__content__category[data-v-b359c3d6] {
+    line-height: 1.7142857143rem;
+  }
+  .article-item__content__title[data-v-b359c3d6] {
+    font-size: 1.1428571429rem;
+    margin: 0.75rem 0;
+  }
+  .article-item__content__description[data-v-b359c3d6] {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article-item__content[data-v-b359c3d6] {
+    padding: 0.5rem 1.25rem 0.5rem 1rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .article-item__img[data-v-b359c3d6] {
+    width: 30%;
+  }
+}

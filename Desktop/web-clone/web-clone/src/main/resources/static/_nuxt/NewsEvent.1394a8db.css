@@ -1,0 +1,41 @@
+.partner-wrapper .logo-item[data-v-f31c483d] {
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  border-radius: .8571428571rem;
+  display: grid;
+  place-items: center
+}
+
+.partner-wrapper .logo-item[data-v-f31c483d]:hover {
+  border-color: var(--theme-primary-color)
+}
+
+.partner-wrapper .logo-item img[data-v-f31c483d] {
+  aspect-ratio: 1/1;
+  height: 90%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 90%
+}
+
+.partner__list-partner-logo[data-v-f31c483d] {
+  --column: 2;
+  --spacing: 2.2857142857rem;
+  background: #f8f8f8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.2857142857rem;
+  gap: var(--spacing);
+  overflow: auto;
+  padding-right: 1rem
+}
+
+.partner__list-partner-logo .logo-item[data-v-f31c483d] {
+  width: calc((100% - var(--spacing))/var(--column))
+}
+
+.partner__introduction .description[data-v-f31c483d] {
+  max-height: 20rem;
+  overflow: auto
+}

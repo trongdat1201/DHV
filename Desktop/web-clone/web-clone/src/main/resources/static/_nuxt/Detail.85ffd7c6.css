@@ -1,0 +1,41 @@
+.tab-list[data-v-20dd1446] {
+  flex-direction: column;
+  gap: 2rem;
+}
+.tab-list-container[data-v-20dd1446] {
+  padding: 1.7142857143rem 0;
+}
+@media screen and (min-width: 992px) {
+  .tab-list-container[data-v-20dd1446] {
+    padding: 3.5714285714rem 0;
+  }
+}
+@media screen and (min-width: 576px) {
+  .tab-list[data-v-20dd1446] {
+    flex-direction: row;
+    gap: 4.4rem;
+  }
+}
+.tab-item[data-v-20dd1446] {
+  cursor: pointer;
+  font-size: 1.1428571429rem;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+@media screen and (min-width: 576px) {
+  .tab-item[data-v-20dd1446] {
+    font-size: 1.4285714286rem;
+  }
+}
+.tab-item.active[data-v-20dd1446],
+.tab-item[data-v-20dd1446]:hover {
+  color: var(--theme-primary-color);
+}
+[data-v-20dd1446] .ant-select {
+  width: 100%;
+}
+[data-v-20dd1446] .ant-select-selection-item {
+  color: var(--theme-primary-color);
+  font-size: 1.1428571429rem;
+  font-weight: 700;
+}

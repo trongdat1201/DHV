@@ -1,0 +1,184 @@
+.hr-organizational-structure__introduction-section[data-v-c61e27b9] {
+  aspect-ratio: 1442/773;
+  max-height: 55rem;
+  width: 100%;
+}
+.hr-organizational-structure__introduction-section
+  .image-banner[data-v-c61e27b9] {
+  -webkit-clip-path: polygon(100% 0, 100% 73%, 73% 100%, 0 55%, 0 0);
+  clip-path: polygon(100% 0, 100% 73%, 73% 100%, 0 55%, 0 0);
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+.hr-organizational-structure__introduction-section
+  .triangle-overlay[data-v-c61e27b9] {
+  aspect-ratio: 1/1;
+  bottom: 0;
+  color: var(--theme-primary-color);
+  height: 56.6%;
+  left: 0;
+  z-index: 1;
+}
+@media screen and (min-width: 992px) {
+  .hr-organizational-structure__introduction-section
+    .triangle-overlay[data-v-c61e27b9] {
+    bottom: 10.4%;
+  }
+}
+.hr-organizational-structure__introduction-section
+  .triangle-overlay
+  svg[data-v-c61e27b9] {
+  height: 100%;
+  width: 100%;
+}
+.hr-organizational-structure__introduction-section .title[data-v-c61e27b9] {
+  background-color: rgba(var(--theme-primary-rgb-color), 0.05);
+  border-radius: 25rem;
+  color: var(--theme-primary-color);
+  font-size: clamp(1.2857142857rem, 2.254vw + 0.539rem, 2.2857142857rem);
+  font-weight: 600;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding: 1.1428571429rem 2.1428571429rem;
+  position: relative;
+}
+h2.section-title[data-v-bfd3f85f] {
+  margin-bottom: 0.8571428571rem;
+}
+@media screen and (min-width: 992px) {
+  h2.section-title[data-v-bfd3f85f] {
+    margin-bottom: 2.1428571429rem;
+  }
+}
+h2.section-title[data-v-84a8cbcd] {
+  margin-bottom: 0.8571428571rem;
+}
+@media screen and (min-width: 992px) {
+  h2.section-title[data-v-84a8cbcd] {
+    margin-bottom: 2.1428571429rem;
+  }
+}
+.hr-organizational-structure__chart-wrapper[data-v-25e2cce5] {
+  position: relative;
+}
+.hr-organizational-structure__chart-wrapper h2.section-title[data-v-25e2cce5] {
+  margin-bottom: 0.8571428571rem;
+}
+@media screen and (min-width: 992px) {
+  .hr-organizational-structure__chart-wrapper
+    h2.section-title[data-v-25e2cce5] {
+    margin-bottom: 2.1428571429rem;
+  }
+}
+.hr-organizational-structure__logo-bg[data-v-25e2cce5] {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 50%;
+  opacity: 0.05;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%);
+  width: 100%;
+  z-index: 5;
+}
+.hr-organizational-structure__sidebar-wrapper[data-v-98528c5e] {
+  position: sticky;
+  top: 12rem;
+}
+@media screen and (min-width: 992px) and (min-height: 600px) {
+  .hr-organizational-structure__sidebar-wrapper[data-v-98528c5e] {
+    height: 100vh;
+    max-height: calc(100vh - 12rem);
+  }
+}
+.hr-organizational-structure__sidebar-wrapper .mascot-bg[data-v-98528c5e] {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.hr-organizational-structure__sidebar-wrapper .mascot-bg img[data-v-98528c5e] {
+  aspect-ratio: 404/685;
+  display: inline-block;
+  height: 100%;
+}
+.hr-organizational-structure__sidebar-list-section__item[data-v-98528c5e] {
+  border-radius: 25rem;
+  cursor: pointer;
+  padding: 0.7142857143rem 2.1428571429rem;
+}
+.hr-organizational-structure__sidebar-list-section__item
+  .logo[data-v-98528c5e] {
+  aspect-ratio: 22/37;
+  display: inline-block;
+  width: 1.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .hr-organizational-structure__sidebar-list-section__item
+    .logo[data-v-98528c5e] {
+    width: 2rem;
+  }
+}
+.hr-organizational-structure__sidebar-list-section__item
+  .logo
+  img[data-v-98528c5e] {
+  opacity: 0.5;
+}
+.hr-organizational-structure__sidebar-list-section__item
+  .item-name[data-v-98528c5e] {
+  font-size: clamp(1rem, 0.376vw + 0.757rem, 1.1428571429rem);
+  font-weight: 500;
+}
+.hr-organizational-structure__sidebar-list-section__item.active[data-v-98528c5e] {
+  background-color: var(--theme-primary-color);
+  color: #fff;
+}
+.hr-organizational-structure__sidebar-list-section__item.active
+  .logo[data-v-98528c5e] {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+.hr-organizational-structure__sidebar-list-section__item.active
+  .item-name[data-v-98528c5e] {
+  font-weight: 700;
+}
+.hr-organizational-structure__sidebar-list-section--mobile
+  .hr-organizational-structure__sidebar-list-section__item[data-v-98528c5e] {
+  color: #333;
+  font-weight: 600;
+  opacity: 0.2;
+  padding: 0.7142857143rem 1rem;
+}
+.hr-organizational-structure__sidebar-list-section--mobile
+  .hr-organizational-structure__sidebar-list-section__item.active[data-v-98528c5e] {
+  background-color: transparent;
+  opacity: 1;
+}
+.hr-organizational-structure__sidebar-list-section--mobile
+  .hr-organizational-structure__sidebar-list-section__item.active
+  .logo[data-v-98528c5e] {
+  filter: unset;
+}
+.hr-organizational-structure__sidebar-list-section--mobile
+  .logo[data-v-98528c5e] {
+  aspect-ratio: 1/1;
+  background-color: var(--theme-primary-color);
+  border-radius: 0.8571428571rem;
+  margin-inline: auto;
+  padding: 0.4285714286rem;
+  width: 3rem;
+}
+.hr-organizational-structure__sidebar-list-section--mobile
+  .logo.safari[data-v-98528c5e] {
+  aspect-ratio: 1/0.71;
+}
+.hr-organizational-structure__sidebar-list-section--mobile
+  .logo
+  img[data-v-98528c5e] {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}

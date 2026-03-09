@@ -1,0 +1,98 @@
+.editor-content[data-v-a5d9bc84] {
+  color: inherit;
+}
+.editor-content[data-v-a5d9bc84] * {
+  color: inherit;
+  font-family: Montserrat, sans-serif !important;
+  font-size: inherit;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.editor-content[data-v-a5d9bc84] p {
+  font-size: clamp(1rem, 0.282vw + 0.853rem, 1.1428571429rem);
+  margin-bottom: 1rem;
+}
+.editor-content[data-v-a5d9bc84] p:last-child {
+  margin-bottom: 0;
+}
+.editor-content[data-v-a5d9bc84] a {
+  color: var(--theme-primary-color) !important;
+}
+.editor-content[data-v-a5d9bc84] a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+.editor-content[data-v-a5d9bc84] ol,
+.editor-content[data-v-a5d9bc84] ul {
+  margin-bottom: 1.4285714286rem;
+  padding-left: 0;
+  text-align: justify;
+}
+.editor-content[data-v-a5d9bc84] ol li,
+.editor-content[data-v-a5d9bc84] ul li {
+  font-size: clamp(1rem, 0.282vw + 0.853rem, 1.1428571429rem);
+  margin-bottom: 0.2857142857rem;
+  margin-left: 2.1428571429rem;
+}
+.editor-content[data-v-a5d9bc84] ol {
+  list-style: auto;
+}
+.editor-content[data-v-a5d9bc84] h2,
+.editor-content[data-v-a5d9bc84] h3,
+.editor-content[data-v-a5d9bc84] h4,
+.editor-content[data-v-a5d9bc84] h5 {
+  font-weight: 600;
+}
+.editor-content[data-v-a5d9bc84] h2 {
+  font-size: 1.7142857143rem !important;
+  line-height: 2rem !important;
+}
+.editor-content[data-v-a5d9bc84] h3 {
+  font-size: 1.2857142857rem !important;
+}
+.editor-content[data-v-a5d9bc84] h2,
+.editor-content[data-v-a5d9bc84] h3,
+.editor-content[data-v-a5d9bc84] h4,
+.editor-content[data-v-a5d9bc84] h5,
+.editor-content[data-v-a5d9bc84] h6 {
+  margin-bottom: 1rem;
+}
+.editor-content[data-v-a5d9bc84] h2:last-child,
+.editor-content[data-v-a5d9bc84] h3:last-child,
+.editor-content[data-v-a5d9bc84] h4:last-child,
+.editor-content[data-v-a5d9bc84] h5:last-child,
+.editor-content[data-v-a5d9bc84] h6:last-child {
+  margin-bottom: 0;
+}
+.editor-content[data-v-a5d9bc84] iframe {
+  aspect-ratio: 16/9 !important;
+  height: auto !important;
+  margin-bottom: 1rem;
+  max-width: 100% !important;
+}
+.editor-content[data-v-a5d9bc84] mark {
+  background-color: #f5ec704a !important;
+}
+.editor-content[data-v-a5d9bc84] table {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.editor-content[data-v-a5d9bc84] table:last-child {
+  margin-bottom: 0;
+}
+.editor-content[data-v-a5d9bc84] table td,
+.editor-content[data-v-a5d9bc84] table th {
+  border: 1px solid #e0e1e4;
+  padding: 0.8571428571rem;
+  vertical-align: baseline;
+}
+.editor-content[data-v-a5d9bc84] video {
+  width: 100%;
+}
+.editor-content[data-v-a5d9bc84] .ignore-image img {
+  display: none;
+}
+.editor-content .text-justify[data-v-a5d9bc84] {
+  text-align: justify;
+}
