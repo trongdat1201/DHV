@@ -9377,13 +9377,12 @@
                   </svg></div>
               </div>
               <div class="col-8 text-center" data-v-39de9c64>
-                <div class="logo lg:pr-8" data-v-39de9c64><a href="/" class="block aspect-[102/39]"
-                  aria-label="Logo header" data-v-39de9c64><img src="/images/download-removebg-preview.png"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM"
-                    style="width: 120px; height: 55px; object-fit: contain; display: block; margin: 0 auto;"
-                    data-v-39de9c64>
-                </a>
-              </div>
+                <div class="mobile-logo logo" data-v-39de9c64>
+                  <a aria-current="page" aria-label="Logo header" class="router-link-active router-link-exact-active"
+                    data-v-39de9c64 href="/"><img alt="DHV - Trường Đại Học Hùng Vương TPHCM"
+                      class="h-full inline-block" data-v-39de9c64 loading="lazy"
+                      src="/images/download-removebg-preview.png" /></a>
+                </div>
               </div>
               <div class="col-2 !p-0 flex justify-end" data-v-39de9c64>
                 <div class="relative pr-2 w-fit h-fit lg:w-full" data-v-39de9c64 data-v-33a0daa0>
@@ -9912,6 +9911,78 @@
   <script>window.__NUXT__ = {}; window.__NUXT__.config = { public: { NODE_ENV: "production", API_ENDPOINT: "http://api:5000", URL_PROTOCOL: "https:", DEFAULT_ALT_IMAGE: "DHV - Trường Đại Học Hùng Vương TPHCM", VERSION_IMAGE_WEBP: "1.2.1", CRM_BIZFLY_DOMAIN: "", CRM_BIZFLY_PROJECT_TOKEN: "", CRM_BIZFLY_API_KEY: "", CRM_BIZFLY_API_SECRET_KEY: "", DIGITAL_OCEAN_DOMAIN: "https://hung-vuong-prd.sgp1.digitaloceanspaces.com" }, app: { baseURL: "/", buildAssetsDir: "/_nuxt/", cdnURL: "" } }</script>
   <script type="module" src="/_nuxt/entry.8aa394d7.js" crossorigin></script>
   <script src="../../../aijob.com.vn/shared/chat/chat-widget.js"></script>
+
+  <script>
+    (function () {
+      function initHeaderMobileMenu() {
+        const headerMobile = document.querySelector('.header-small-mobile');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (!headerMobile || !mobileMenu) return;
+
+        const toggleBtn = headerMobile.querySelector('.col-2 > div');
+        const expandableItems = mobileMenu.querySelectorAll('.mobile-menu-item .menu-item-header');
+        const nestedExpandableItems = mobileMenu.querySelectorAll('.mobile-menu-item .child-menu-item-header');
+
+        if (toggleBtn && !toggleBtn.__tbBound) {
+          toggleBtn.__tbBound = true;
+          toggleBtn.setAttribute('role', 'button');
+          toggleBtn.setAttribute('tabindex', '0');
+
+          const toggleMenu = () => {
+            const opened = mobileMenu.classList.toggle('opened');
+            toggleBtn.classList.toggle('opened', opened);
+            document.body.style.overflow = opened ? 'hidden' : '';
+          };
+
+          toggleBtn.addEventListener('click', toggleMenu);
+          toggleBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleMenu();
+            }
+          });
+        }
+
+        expandableItems.forEach((header) => {
+          if (header.__tbBound) return;
+          header.__tbBound = true;
+
+          const parentItem = header.closest('.mobile-menu-item');
+          if (!parentItem || !parentItem.querySelector('.child-menu')) return;
+
+          header.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            parentItem.classList.toggle('collapsed');
+          });
+        });
+
+        nestedExpandableItems.forEach((header) => {
+          if (header.__tbBound) return;
+          header.__tbBound = true;
+
+          const parentItem = header.closest('.child-menu-item');
+          if (!parentItem || !parentItem.querySelector('.child-menu')) return;
+
+          header.addEventListener('click', () => {
+            parentItem.classList.toggle('collapsed');
+          });
+        });
+      }
+
+      initHeaderMobileMenu();
+      setTimeout(initHeaderMobileMenu, 120);
+      setTimeout(initHeaderMobileMenu, 600);
+
+      document.addEventListener('DOMContentLoaded', function () {
+        initHeaderMobileMenu();
+        setTimeout(initHeaderMobileMenu, 300);
+      });
+
+      window.addEventListener('load', function () {
+        initHeaderMobileMenu();
+      });
+    })();
+  </script>
 </body>
 
 <!-- Mirrored from bam.dhv.edu.vn/scientific-research/teacher/research-project by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Jan 2026 06:38:13 GMT -->
