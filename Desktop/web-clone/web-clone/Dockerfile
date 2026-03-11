@@ -29,5 +29,5 @@ ENV PORT=8080
 # Expose port
 EXPOSE 8080
 
-# Run application with proper shell expansion
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT} -jar app.jar"]
+# Run application with debug output
+ENTRYPOINT ["sh", "-c", "echo '=== Starting Application ===' && echo \"PORT: ${PORT}\" && echo \"Java version:\" && java -version && echo \"Files in /app:\" && ls -la && echo \"Starting Spring Boot...\" && exec java -Dserver.port=${PORT} -jar app.jar"]
