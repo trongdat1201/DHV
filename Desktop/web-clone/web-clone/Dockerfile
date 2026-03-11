@@ -23,11 +23,15 @@ WORKDIR /app
 # Copy jar from build stage
 COPY --from=build /app/target/web-clone-0.0.1-SNAPSHOT.jar app.jar
 
+# Copy entrypoint script
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
 # Set default PORT if not provided
 ENV PORT=8080
 
 # Expose port
 EXPOSE 8080
 
-# Run application with debug output
-ENTRYPOINT ["sh", "-c", "echo '=== Starting Application ===' && echo \"PORT: ${PORT}\" && echo \"Java version:\" && java -version && echo \"Files in /app:\" && ls -la && echo \"Starting Spring Boot...\" && exec java -Dserver.port=${PORT} -jar app.jar"]
+# Use entrypoint script
+ENTRYPOINT ["./entrypoint.sh"]
