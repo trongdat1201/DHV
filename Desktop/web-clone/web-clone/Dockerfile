@@ -20,9 +20,6 @@ RUN ./mvnw clean package -DskipTests
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
-# Install bash for better debugging
-RUN apk add --no-cache bash
-
 # Copy jar from build stage
 COPY --from=build /app/target/web-clone-0.0.1-SNAPSHOT.jar app.jar
 
@@ -32,5 +29,5 @@ ENV PORT=8080
 # Expose port
 EXPOSE 8080
 
-# Simple direct command - no script
-CMD ["sh", "-c", "echo 'Container started' && ls -la && java -Dserver.port=${PORT} -jar app.jar"]
+# Run application - Spring Boot reads PORT from environment
+CMD ["java", "-jar", "app.jar"]
