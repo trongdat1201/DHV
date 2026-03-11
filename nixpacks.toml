@@ -3,7 +3,8 @@ nixPkgsArchive = "ba913eda2df8eb72147259189d55932012df6301"
 
 [phases.build]
 cmds = [
-    "cd Desktop/web-clone/web-clone && ./mvnw clean install -DskipTests"
+    "chmod +x Desktop/web-clone/web-clone/mvnw",
+    "cd Desktop/web-clone/web-clone && ./mvnw clean package -DskipTests"
 ]
 
 [start]
