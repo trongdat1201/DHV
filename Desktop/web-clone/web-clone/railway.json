@@ -6,5 +6,8 @@
   "deploy": {
     "startCommand": "java -Dserver.port=$PORT -jar target/web-clone-0.0.1-SNAPSHOT.jar",
     "healthcheckPath": "/"
+  },
+  "variables": {
+    "JAVA_VERSION": "21"
   }
 }
