@@ -2,10 +2,7 @@
 nixPkgs = ['jdk21']
 
 [phases.build]
-cmds = [
-  'cd Desktop/web-clone/web-clone',
-  './mvnw clean package -DskipTests'
-]
+cmds = ['./mvnw clean package -DskipTests']
 
 [start]
-cmd = 'cd Desktop/web-clone/web-clone && pwd && ls -la target/ && java -Dserver.port=$PORT -jar target/web-clone-0.0.1-SNAPSHOT.jar'
+cmd = 'pwd && ls -la target/ && java -Dserver.port=$PORT -jar target/web-clone-0.0.1-SNAPSHOT.jar'
