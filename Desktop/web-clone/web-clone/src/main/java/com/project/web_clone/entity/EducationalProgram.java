@@ -23,13 +23,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
-/**
- * Chương trình đào tạo cho 3 block: Ngắn hạn / Liên kết / Sau đại học.
- *
- * Dùng Set<> thay List<> để tránh Hibernate MultipleBagFetchException
- * khi 1 entity có nhiều @OneToMany collection.
- * @BatchSize giúp Hibernate batch-load các collection con, tránh N+1.
- */
+
 @Entity
 @Table(
     name = "educational_program",

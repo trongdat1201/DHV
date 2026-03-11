@@ -11,7 +11,7 @@ public class EducationalProgramBannerItem {
     private Long id;
 
     @Column(nullable = false)
-    private String programTypeSlug; // dai-hoc, sau-dai-hoc, etc.
+    private String programTypeSlug; 
 
     private String title;
     
