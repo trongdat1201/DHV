@@ -29,5 +29,5 @@ ENV PORT=8080
 # Expose port
 EXPOSE 8080
 
-# Run application - Spring Boot reads PORT from environment
-CMD ["java", "-jar", "app.jar"]
+# Run with verbose Java logging and unbuffered output
+CMD ["sh", "-c", "set -x && echo 'Starting application...' && echo 'PORT='$PORT && java -Djava.awt.headless=true -XX:+PrintCommandLineFlags -jar app.jar 2>&1"]
