@@ -16,7 +16,7 @@ COPY src src
 # Build application
 RUN ./mvnw clean package -DskipTests
 
-# Runtime stage
+# Runtime stage  
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
@@ -29,5 +29,5 @@ ENV PORT=8080
 # Expose port
 EXPOSE 8080
 
-# Simple test: print to stdout and stderr then start app
-CMD sh -c 'echo "STDOUT: Container starting on PORT=$PORT" && echo "STDERR: This is stderr output" >&2 && java -jar app.jar'
+# Test: Keep container alive and print logs continuously
+CMD sh -c 'echo "=== CONTAINER STARTED ===" && echo "PORT=$PORT" && echo "Starting Java app..." && java -Xms256m -Xmx512m -jar app.jar || (echo "Java crashed with exit code $?" && sleep 300)'
