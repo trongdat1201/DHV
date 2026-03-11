@@ -23,8 +23,11 @@ WORKDIR /app
 # Copy jar from build stage
 COPY --from=build /app/target/web-clone-0.0.1-SNAPSHOT.jar app.jar
 
+# Set default PORT if not provided
+ENV PORT=8080
+
 # Expose port
 EXPOSE 8080
 
-# Run application
-CMD ["sh", "-c", "java -Dserver.port=$PORT -jar app.jar"]
+# Run application with proper shell expansion
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT} -jar app.jar"]
