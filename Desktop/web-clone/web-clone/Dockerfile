@@ -23,15 +23,11 @@ WORKDIR /app
 # Copy jar from build stage
 COPY --from=build /app/target/web-clone-0.0.1-SNAPSHOT.jar app.jar
 
-# Copy entrypoint script
-COPY docker-entrypoint.sh /app/docker-entrypoint.sh
-RUN chmod +x /app/docker-entrypoint.sh
-
 # Set default PORT if not provided
 ENV PORT=8080
 
 # Expose port
 EXPOSE 8080
 
-# Use entrypoint script
-ENTRYPOINT ["/app/docker-entrypoint.sh"]
+# Simple test: print to stdout and stderr then start app
+CMD sh -c 'echo "STDOUT: Container starting on PORT=$PORT" && echo "STDERR: This is stderr output" >&2 && java -jar app.jar'
