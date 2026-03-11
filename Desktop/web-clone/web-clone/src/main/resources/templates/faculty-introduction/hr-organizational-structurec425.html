@@ -9306,13 +9306,6 @@
     ? 'position:relative;width:min(420px,100%);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-radius:9999px;background:#1C3664;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.10);text-decoration:none;overflow:hidden;' 
     : 'position:relative;width:min(420px,100%);height:56px;display:flex;align-items:center;padding:0 28px;border-radius:9999px;background:#fff;color:#1C3664;border:1px solid #eef2f7;box-shadow:0 1px 4px rgba(0,0,0,.08);text-decoration:none;overflow:hidden;'">
 
-                    <span style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;margin-right:16px;">
-                      <img th:src="${settings['hr_org_img_002'] != null ? settings['hr_org_img_002'] : 'https://placehold.co/28x28/e2e8f0/a0aec0?text=+'}"
-                        style="width:28px;height:28px;object-fit:contain;"
-                        th:styleappend="${currentSection == 'hr-organizational-structure'} ? 'filter:brightness(0) invert(1);' : 'opacity:.7;filter:grayscale(1);'"
-                        alt="Icon" data-setting-key="hr_org_img_002" data-setting-type="image"
-                        data-text-setting-key="hr_org_txt_004" />
-                    </span>
 
                     <span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:1;"
                       th:styleappend="${currentSection == 'hr-organizational-structure'} ? 'font-weight:700;' : 'font-weight:600;'"
@@ -9328,13 +9321,6 @@
     ? 'position:relative;width:min(420px,100%);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-radius:9999px;background:#1C3664;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.10);text-decoration:none;overflow:hidden;' 
     : 'position:relative;width:min(420px,100%);height:56px;display:flex;align-items:center;padding:0 28px;border-radius:9999px;background:#fff;color:#1C3664;border:1px solid #eef2f7;box-shadow:0 1px 4px rgba(0,0,0,.08);text-decoration:none;overflow:hidden;'">
 
-                    <span style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;margin-right:16px;">
-                      <img th:src="${settings['hr_org_img_003'] != null ? settings['hr_org_img_003'] : 'https://placehold.co/28x28/e2e8f0/a0aec0?text=+'}"
-                        style="width:28px;height:28px;object-fit:contain;"
-                        th:styleappend="${currentSection == 'growth-direction'} ? 'filter:brightness(0) invert(1);' : 'opacity:.7;filter:grayscale(1);'"
-                        alt="Icon" data-setting-key="hr_org_img_003" data-setting-type="image"
-                        data-text-setting-key="hr_org_txt_005" />
-                    </span>
 
                     <span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:1;"
                       th:styleappend="${currentSection == 'growth-direction'} ? 'font-weight:700;' : 'font-weight:600;'"
@@ -9350,13 +9336,6 @@
     ? 'position:relative;width:min(420px,100%);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-radius:9999px;background:#1C3664;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.10);text-decoration:none;overflow:hidden;' 
     : 'position:relative;width:min(420px,100%);height:56px;display:flex;align-items:center;padding:0 28px;border-radius:9999px;background:#fff;color:#1C3664;border:1px solid #eef2f7;box-shadow:0 1px 4px rgba(0,0,0,.08);text-decoration:none;overflow:hidden;'">
 
-                    <span style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;margin-right:16px;">
-                      <img th:src="${settings['hr_org_img_004'] != null ? settings['hr_org_img_004'] : 'https://placehold.co/28x28/e2e8f0/a0aec0?text=+'}"
-                        style="width:28px;height:28px;object-fit:contain;"
-                        th:styleappend="${currentSection == 'admissions-information'} ? 'filter:brightness(0) invert(1);' : 'opacity:.7;filter:grayscale(1);'"
-                        alt="Icon" data-setting-key="hr_org_img_004" data-setting-type="image"
-                        data-text-setting-key="hr_org_txt_006" />
-                    </span>
 
                     <span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:1;"
                       th:styleappend="${currentSection == 'admissions-information'} ? 'font-weight:700;' : 'font-weight:600;'"
@@ -10313,6 +10292,53 @@
       });
     })();
   </script>
+  <style>
+    body.tb-edit-mode header [data-setting-key],
+    body.tb-edit-mode header [data-setting-type],
+    body.tb-edit-mode footer [data-setting-key],
+    body.tb-edit-mode footer [data-setting-type] {
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+    }
+
+    body.tb-edit-mode header [data-setting-key]::before,
+    body.tb-edit-mode header [data-setting-type]::before,
+    body.tb-edit-mode footer [data-setting-key]::before,
+    body.tb-edit-mode footer [data-setting-type]::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    body.tb-edit-mode #main-body [data-setting-key],
+    body.tb-edit-mode #main-body [data-setting-type] {
+      border: none !important;
+      outline: 2px solid #9bb0d7 !important;
+      outline-offset: 4px !important;
+      border-radius: 14px !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    body.tb-edit-mode #main-body img[data-setting-key],
+    body.tb-edit-mode #main-body img[data-setting-type] {
+      padding: 8px !important;
+      outline-offset: 6px !important;
+    }
+
+    body.tb-edit-mode .tb-img-pencil,
+    body.tb-edit-mode .tb-img-pencil svg {
+      display: none !important;
+    }
+
+    body.tb-edit-mode .swiper-pagination,
+    body.tb-edit-mode .swiper-pagination-bullets,
+    body.tb-edit-mode .swiper-pagination-bullet,
+    body.tb-edit-mode .vc-dots,
+    body.tb-edit-mode .vc-dot {
+      display: none !important;
+    }
+  </style>
 </body>
 
 <!-- Mirrored from bam.dhv.edu.vn/faculty-introduction/hr-organizational-structure?section=growth-direction by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Jan 2026 06:37:53 GMT -->

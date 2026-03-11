@@ -101,7 +101,7 @@ public class AlumniController {
             }
             
             quote.setDescription(description);
-            quote.setImageUrl(quoteDTO.getImageUrl());
+            quote.setImageUrl(normalizeImageUrl(quoteDTO.getImageUrl(), "alumni"));
             quote.setCreatedAt(LocalDateTime.now());
             quote.setUpdatedAt(LocalDateTime.now());
 
@@ -125,7 +125,7 @@ public class AlumniController {
                     quote.setPosition(quoteDTO.getPosition());
                     quote.setDescription(quoteDTO.getDescription() != null ? quoteDTO.getDescription() : quoteDTO.getContent());
                     if (quoteDTO.getImageUrl() != null) {
-                        quote.setImageUrl(quoteDTO.getImageUrl());
+                        quote.setImageUrl(normalizeImageUrl(quoteDTO.getImageUrl(), "alumni"));
                     }
                     quote.setUpdatedAt(LocalDateTime.now());
                     
@@ -170,15 +170,46 @@ public class AlumniController {
         dto.setPosition(quote.getPosition());
         dto.setDescription(quote.getDescription());
         dto.setContent(quote.getDescription());
-        dto.setImageUrl(quote.getImageUrl());
+        dto.setImageUrl(normalizeImageUrl(quote.getImageUrl(), "alumni"));
         
         // Create picture object structure matching frontend expectations
-        if (quote.getImageUrl() != null) {
-            PictureDTO picture = new PictureDTO(quote.getImageUrl(), "DHV - Trường Đại Học Hùng Vương TPHCM");
+        if (dto.getImageUrl() != null) {
+            PictureDTO picture = new PictureDTO(dto.getImageUrl(), "DHV - Trường Đại Học Hùng Vương TPHCM");
             dto.setPictureQuoute(picture);
         }
         
         return dto;
+    }
+
+    private String normalizeImageUrl(String imageUrl, String folder) {
+        if (imageUrl == null) {
+            return null;
+        }
+
+        String trimmed = imageUrl.trim();
+        if (trimmed.isEmpty()) {
+            return null;
+        }
+
+        if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+            return trimmed;
+        }
+
+        String cleaned = trimmed;
+        if (cleaned.startsWith("/")) {
+            cleaned = cleaned.substring(1);
+        }
+
+        if (cleaned.startsWith("uploads/")) {
+            return "/" + cleaned;
+        }
+
+        String normalizedFolder = folder != null ? folder.trim().toLowerCase() : "";
+        if (normalizedFolder.isEmpty()) {
+            normalizedFolder = "alumni";
+        }
+
+        return "/uploads/" + normalizedFolder + "/" + cleaned;
     }
 
     // Inner class for picture DTO
@@ -223,7 +254,7 @@ public class AlumniController {
                 banner.getId(),
                 banner.getTitle(),
                 banner.getContent(),
-                banner.getImageUrl()
+                normalizeImageUrl(banner.getImageUrl(), "alumni")
             );
             return ResponseEntity.ok(dto);
         } catch (Exception e) {
@@ -246,7 +277,7 @@ public class AlumniController {
                         banner.setContent(bannerDTO.getContent().trim());
                     }
                     if (bannerDTO.getImageUrl() != null) {
-                        banner.setImageUrl(bannerDTO.getImageUrl().trim());
+                        banner.setImageUrl(normalizeImageUrl(bannerDTO.getImageUrl().trim(), "alumni"));
                     }
                     banner.setUpdatedAt(LocalDateTime.now());
                     
@@ -257,7 +288,7 @@ public class AlumniController {
                         saved.getId(),
                         saved.getTitle(),
                         saved.getContent(),
-                        saved.getImageUrl()
+                        normalizeImageUrl(saved.getImageUrl(), "alumni")
                     );
                     return ResponseEntity.ok(dto);
                 })

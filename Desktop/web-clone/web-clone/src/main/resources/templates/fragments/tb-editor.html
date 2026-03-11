@@ -16,6 +16,9 @@
 
         <div id="tb-admin-bar" class="tb-admin-bar" th:if="${isAdmin}">
             <button id="btnToggleEdit" class="tb-admin-btn" type="button">Bật Edit mode</button>
+            <form th:action="@{/logout}" method="post" style="margin:0;">
+                <button type="submit" class="tb-admin-btn logout">Logout</button>
+            </form>
         </div>
 
         <script defer src="/tb/tb-editor.js"></script>

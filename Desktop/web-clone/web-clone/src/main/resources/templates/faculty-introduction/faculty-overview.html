@@ -9767,6 +9767,40 @@
     })();
   </script>
 
+  <style>
+    body.tb-edit-mode header [data-setting-key],
+    body.tb-edit-mode header [data-setting-type],
+    body.tb-edit-mode footer [data-setting-key],
+    body.tb-edit-mode footer [data-setting-type] {
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+    }
+
+    body.tb-edit-mode header [data-setting-key]::before,
+    body.tb-edit-mode header [data-setting-type]::before,
+    body.tb-edit-mode footer [data-setting-key]::before,
+    body.tb-edit-mode footer [data-setting-type]::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    body.tb-edit-mode #main-body [data-setting-key],
+    body.tb-edit-mode #main-body [data-setting-type] {
+      border: none !important;
+      outline: 2px solid #9bb0d7 !important;
+      outline-offset: 4px !important;
+      border-radius: 14px !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    body.tb-edit-mode #main-body img[data-setting-key],
+    body.tb-edit-mode #main-body img[data-setting-type] {
+      padding: 8px !important;
+      outline-offset: 6px !important;
+    }
+  </style>
 </body>
 <!-- Mirrored from bam.dhv.edu.vn/faculty-introduction/faculty-overview by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Jan 2026 06:37:47 GMT -->
 

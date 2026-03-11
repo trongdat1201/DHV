@@ -9337,6 +9337,16 @@
           </div>
         </nav>
         <div id="breadcrumb" data-v-39de9c64></div>
+        <style>
+          @media (max-width: 991px) {
+            .header-area .header-small-mobile,
+            .header-area .header-small-mobile.opened,
+            .header-area .main-header-wrap,
+            .header-area .main-header-wrap > nav {
+              background-color: rgba(255, 255, 255, 1) !important;
+            }
+          }
+        </style>
         <div id="extra" data-v-39de9c64></div>
         <div id="mobileMenuPanel" class="mobile-menu flex lg:hidden flex-col" data-v-39de9c64>
           <div class="container flex-1" data-v-39de9c64><!--[-->
@@ -10634,7 +10644,7 @@
       const formData = new FormData();
       formData.append('file', file);
       
-      fetch('/api/upload/image', {
+      fetch('/api/upload/image?folder=alumni', {
         method: 'POST',
         credentials: 'include',
         body: formData
@@ -11765,7 +11775,7 @@
           const formData = new FormData();
           formData.append('file', currentBannerImageData.file);
           
-          const uploadResponse = await fetch('/api/upload/image', {
+          const uploadResponse = await fetch('/api/upload/image?folder=alumni', {
             method: 'POST',
             body: formData
           });

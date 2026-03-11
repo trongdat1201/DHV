@@ -8949,15 +8949,23 @@
 
     .student-experience__list-news .navigation-btn.prev-btn,
     .student-experience__list-news .navigation-btn.next-btn {
-      border: 1px solid #2b4a73;
-      background-color: #2b4a73;
+      border: 1px solid #2b4a73 !important;
+      background-color: #2b4a73 !important;
+      color: #fff;
+      box-shadow: none;
+      border-radius: 9999px;
+    }
+
+    .student-experience__list-news .navigation-btn.prev-btn svg,
+    .student-experience__list-news .navigation-btn.next-btn svg {
+      fill: #fff;
       color: #fff;
     }
 
     .student-experience__list-news .navigation-btn.prev-btn:hover,
     .student-experience__list-news .navigation-btn.next-btn:hover {
-      border-color: #355a8b;
-      background-color: #355a8b;
+      border-color: #355a8b !important;
+      background-color: #355a8b !important;
       color: #fff;
     }
 
@@ -9456,6 +9464,16 @@
           </div>
         </nav>
         <div id="breadcrumb" data-v-39de9c64></div>
+        <style>
+          @media (max-width: 991px) {
+            .header-area .header-small-mobile,
+            .header-area .header-small-mobile.opened,
+            .header-area .main-header-wrap,
+            .header-area .main-header-wrap > nav {
+              background-color: rgba(255, 255, 255, 1) !important;
+            }
+          }
+        </style>
         <div id="extra" data-v-39de9c64></div>
         <div id="news12daMobileMenuPanel" class="mobile-menu flex lg:hidden flex-col" data-v-39de9c64>
           <div class="container flex-1" data-v-39de9c64>

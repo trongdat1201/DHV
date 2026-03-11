@@ -15,6 +15,5 @@ INSERT INTO categories (name, slug, display_order) VALUES
 ('Tuyển sinh - Hướng nghiệp', 'tuyen-sinh-huong-nghiep', 5)
 ON DUPLICATE KEY UPDATE display_order = VALUES(display_order);
 
--- Remove deprecated tables if they still exist
 DROP TABLE IF EXISTS alumni_marquee;
 DROP TABLE IF EXISTS alumni;

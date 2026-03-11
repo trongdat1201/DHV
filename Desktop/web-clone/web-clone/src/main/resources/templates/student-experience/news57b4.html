@@ -8949,41 +8949,25 @@
       color: #fff;
     }
 
-    .student-experience__list-news .navigation-btn-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.1rem;
-    }
-
-    .student-experience__list-news .navigation-btn-wrapper .navigation-btn {
-      position: static;
-      transform: none;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 9999px;
-      border: 1px solid #2b4a73;
-      background-color: #2b4a73;
+    .student-experience__list-news .navigation-btn.prev-btn,
+    .student-experience__list-news .navigation-btn.next-btn {
+      border: 1px solid #2b4a73 !important;
+      background-color: #2b4a73 !important;
       color: #fff;
       box-shadow: none;
+      border-radius: 9999px;
     }
 
-    .student-experience__list-news .navigation-btn-wrapper .navigation-btn.prev-btn svg {
-      transform: rotate(180deg);
+    .student-experience__list-news .navigation-btn.prev-btn svg,
+    .student-experience__list-news .navigation-btn.next-btn svg {
+      fill: #fff;
+      color: #fff;
     }
 
-    .student-experience__list-news .navigation-btn-wrapper .navigation-btn .arrow-icon {
-      width: 1rem;
-      height: 1rem;
-      display: block;
-    }
-
-    .student-experience__list-news .navigation-btn-wrapper .navigation-btn:hover {
-      border-color: #355a8b;
-      background-color: #355a8b;
+    .student-experience__list-news .navigation-btn.prev-btn:hover,
+    .student-experience__list-news .navigation-btn.next-btn:hover {
+      border-color: #355a8b !important;
+      background-color: #355a8b !important;
       color: #fff;
     }
 
@@ -9493,6 +9477,16 @@
           </div>
         </nav>
         <div id="breadcrumb" data-v-39de9c64></div>
+        <style>
+          @media (max-width: 991px) {
+            .header-area .header-small-mobile,
+            .header-area .header-small-mobile.opened,
+            .header-area .main-header-wrap,
+            .header-area .main-header-wrap > nav {
+              background-color: rgba(255, 255, 255, 1) !important;
+            }
+          }
+        </style>
         <div id="extra" data-v-39de9c64></div>
         <div id="news57b4MobileMenuPanel" class="mobile-menu flex lg:hidden flex-col" data-v-39de9c64>
           <div class="container flex-1" data-v-39de9c64>
@@ -9655,10 +9649,11 @@
                             <path
                               d="M-3.27901e-07 -3.09874e-05L4.24833 7.50146L16 7.50146L10.902 -3.1464e-05L-3.27901e-07 -3.09874e-05Z">
                             </path>
+                            <path d="M0 15L4.24833 7.49851L16 7.4985L10.902 15L0 15Z"></path>
                           </g>
                           <defs>
                             <clipPath id="clip0_131_2674">
-                              <rect width="16" height="15"></rect>
+                              <rect width="15" height="16" fill="white" transform="translate(0 15) rotate(-90)"></rect>
                             </clipPath>
                           </defs>
                         </svg></div>
@@ -9669,10 +9664,11 @@
                             <path
                               d="M-3.27901e-07 -3.09874e-05L4.24833 7.50146L16 7.50146L10.902 -3.1464e-05L-3.27901e-07 -3.09874e-05Z">
                             </path>
+                            <path d="M0 15L4.24833 7.49851L16 7.4985L10.902 15L0 15Z"></path>
                           </g>
                           <defs>
                             <clipPath id="clip0_131_2674">
-                              <rect width="16" height="15"></rect>
+                              <rect width="15" height="16" fill="white" transform="translate(0 15) rotate(-90)"></rect>
                             </clipPath>
                           </defs>
                         </svg></div>

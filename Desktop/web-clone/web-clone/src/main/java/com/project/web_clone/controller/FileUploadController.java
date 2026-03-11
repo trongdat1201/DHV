@@ -4,9 +4,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.DirectoryStream;
 import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
@@ -22,13 +26,14 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api/upload")
 public class FileUploadController {
 
-    // Đường dẫn lưu file (lưu vào target để Spring Boot serve ngay lập tức)
-    private static final String UPLOAD_DIR = "target/classes/static/uploads/news/";
-    private static final String SOURCE_UPLOAD_DIR = "src/main/resources/static/uploads/news/";
+    // Đường dẫn lưu file gốc (dựa trên thư mục dự án hiện tại)
+    private static final String DEFAULT_FOLDER = "news";
+    private static final Set<String> ALLOWED_FOLDERS = new HashSet<>(Arrays.asList("news", "events", "alumni"));
 
     @PostMapping("/image")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> uploadImage(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<?> uploadImage(@RequestParam("file") MultipartFile file,
+                                          @RequestParam(value = "folder", required = false) String folder) {
         try {
             // Kiểm tra file có rỗng không
             if (file.isEmpty()) {
@@ -50,23 +55,29 @@ public class FileUploadController {
             String filename = UUID.randomUUID().toString() + extension;
 
             // Lưu vào target/classes (để serve ngay)
-            Path targetPath = Paths.get(UPLOAD_DIR);
-            if (!Files.exists(targetPath)) {
-                Files.createDirectories(targetPath);
+            String normalizedFolder = DEFAULT_FOLDER;
+            if (folder != null) {
+                normalizedFolder = folder.trim().toLowerCase();
             }
-            Path targetFilePath = targetPath.resolve(filename);
-            Files.copy(file.getInputStream(), targetFilePath, StandardCopyOption.REPLACE_EXISTING);
+            if (normalizedFolder == null || normalizedFolder.isEmpty()) {
+                normalizedFolder = DEFAULT_FOLDER;
+            }
 
-            // Lưu vào src/main/resources (để giữ lại khi build)
-            Path sourcePath = Paths.get(SOURCE_UPLOAD_DIR);
-            if (!Files.exists(sourcePath)) {
-                Files.createDirectories(sourcePath);
+            if (!ALLOWED_FOLDERS.contains(normalizedFolder)) {
+                return ResponseEntity.badRequest()
+                    .body(Map.of("error", "Folder không hợp lệ. Chỉ cho phép: news, events, alumni"));
             }
-            Path sourceFilePath = sourcePath.resolve(filename);
-            Files.copy(Files.newInputStream(targetFilePath), sourceFilePath, StandardCopyOption.REPLACE_EXISTING);
+
+            Path sourceUploadRoot = resolveUploadRoot();
+            Path sourceDir = sourceUploadRoot.resolve(normalizedFolder);
+            if (!Files.exists(sourceDir)) {
+                Files.createDirectories(sourceDir);
+            }
+            Path sourceFilePath = sourceDir.resolve(filename);
+            Files.copy(file.getInputStream(), sourceFilePath, StandardCopyOption.REPLACE_EXISTING);
 
             // Trả về URL của ảnh
-            String imageUrl = "/uploads/news/" + filename;
+            String imageUrl = "/uploads/" + normalizedFolder + "/" + filename;
             Map<String, String> response = new HashMap<>();
             response.put("url", imageUrl);
             response.put("filename", filename);
@@ -77,5 +88,34 @@ public class FileUploadController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Lỗi khi upload: " + e.getMessage()));
         }
+    }
+
+    private static Path resolveUploadRoot() throws IOException {
+        Path userDir = Paths.get(System.getProperty("user.dir"));
+        Path[] candidates = new Path[] {
+            userDir.resolve("src").resolve("main").resolve("resources").resolve("static").resolve("uploads"),
+            userDir.resolve("web-clone").resolve("src").resolve("main").resolve("resources").resolve("static").resolve("uploads")
+        };
+
+        for (Path candidate : candidates) {
+            if (Files.exists(candidate)) {
+                return candidate;
+            }
+        }
+
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(userDir)) {
+            for (Path child : stream) {
+                if (!Files.isDirectory(child)) {
+                    continue;
+                }
+
+                Path nested = child.resolve("src").resolve("main").resolve("resources").resolve("static").resolve("uploads");
+                if (Files.exists(nested)) {
+                    return nested;
+                }
+            }
+        }
+
+        return userDir.resolve("src").resolve("main").resolve("resources").resolve("static").resolve("uploads");
     }
 }

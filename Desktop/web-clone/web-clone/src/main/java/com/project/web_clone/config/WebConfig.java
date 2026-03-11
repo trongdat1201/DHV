@@ -11,5 +11,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/assets/_nuxt/**")
                 .addResourceLocations("classpath:/static/_nuxt/");
+
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("classpath:/static/uploads/")
+                .addResourceLocations("file:./web-clone/src/main/resources/static/uploads/")
+                .addResourceLocations("file:./src/main/resources/static/uploads/");
     }
 }

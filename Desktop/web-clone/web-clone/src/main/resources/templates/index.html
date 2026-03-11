@@ -4991,6 +4991,18 @@
       text-shadow: 0 2px 10px rgba(0, 0, 0, .26);
       display: -webkit-box;
       -webkit-line-clamp: 2;
+    }
+
+    .tb-main-slider-section .student-experience__list-news__item:hover .student-experience__list-news__item__content,
+    .tb-main-slider-section .student-experience__list-news__item:hover .student-experience__list-news__item__content .title,
+    .tb-main-slider-section .student-experience__list-news__item:hover .student-experience__list-news__item__content p,
+    .tb-main-slider-section .student-experience__list-news__item:hover .student-experience__list-news__item__content span,
+    .tb-main-slider-section .news-event__item:hover .news-event__item__content,
+    .tb-main-slider-section .news-event__item:hover .news-event__item__content h3,
+    .tb-main-slider-section .news-event__item:hover .news-event__item__content p,
+    .tb-main-slider-section .news-event__item:hover .news-event__item__content span {
+      color: #fff !important;
+    }
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -13137,6 +13149,13 @@
       object-fit: contain;
     }
 
+    body.tb-edit-mode .flag-img {
+      width: 24px;
+      height: auto;
+      max-height: 24px;
+      object-fit: contain;
+    }
+
     /* Modal overlay always receives click/keyboard */
     #tb-editor-overlay {
       pointer-events: auto !important;
@@ -13371,6 +13390,7 @@
           if (img.hasAttribute('data-tb-static-image')) return;
           if (img.closest('#tb-admin-bar') || img.closest('#tb-editor-overlay') || img.closest('.tox')) return;
           if (img.closest('footer .social')) return;
+          if (img.classList.contains('flag-img') || img.closest('.locale-selector') || img.closest('.select-language')) return;
 
           let key = img.getAttribute('data-setting-key');
           if (key) { used.add(key); return; }

@@ -9324,20 +9324,63 @@
       <div id="main-body" class="main-body server" data-v-78b9ef6d>
        
         <div class="faculty-page-introduction__container flex flex-col lg:flex-row relative bg-primary" style="background-color: #2b4a73 !important;" data-v-991a83c4>
+          <style>
+            body.tb-edit-mode .tb-partner-edit-frame {
+              position: relative;
+              outline: 3px dashed #2563eb;
+              border-radius: 18px;
+              padding: 18px 20px;
+              display: block;
+              max-width: 520px;
+            }
+
+            body.tb-edit-mode img.tb-partner-edit-frame {
+              max-width: 100%;
+              width: 100%;
+              padding: 12px;
+              border-radius: 18px;
+              background: rgba(255, 255, 255, 0.08);
+              box-sizing: border-box;
+            }
+
+            body.tb-edit-mode .tb-partner-edit-frame:hover {
+              outline-color: #1d4ed8;
+              box-shadow: 0 0 0 14px rgba(37, 99, 235, .22);
+            }
+
+            body.tb-edit-mode .tb-partner-edit-frame p,
+            body.tb-edit-mode .tb-partner-edit-frame h1,
+            body.tb-edit-mode .tb-partner-edit-frame h2,
+            body.tb-edit-mode .tb-partner-edit-frame h3 {
+              margin: 0;
+            }
+
+            @media (max-width: 991px) {
+              body.tb-edit-mode .tb-partner-edit-frame {
+                max-width: 100%;
+                padding: 14px 16px;
+                border-radius: 14px;
+              }
+
+              body.tb-edit-mode img.tb-partner-edit-frame {
+                padding: 10px;
+              }
+            }
+          </style>
           <div class="absolute top-0 left-0 -translate-x-1/2 hidden lg:block bg-logo opacity-5" data-v-991a83c4><img
               class="w-full h-full"
-              src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1"
+              src="/assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png"
               alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-v-991a83c4></div>
           <div
             class="faculty-page-introduction__left relative container lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 !order-2 lg:!order-1"
             data-v-991a83c4>
             <div class="w-full lg:w-[45%]" data-v-991a83c4>
-                <h1 class="title font-unbounded text-white" data-v-991a83c4 data-setting-key="partner_header_title" data-setting-type="html">
+                <h1 class="title font-unbounded text-white tb-partner-edit-frame" data-v-991a83c4 data-setting-key="partner_header_title" data-setting-type="html">
                 Đối tác
               </h1>
               <div class="description" data-v-991a83c4>
-                <div class="editor-content" data-v-a5d9bc84>
-                  <p class="text-left text-white" data-setting-key="partner_header_desc" data-setting-type="html">Viện Công Nghệ
+                <div class="editor-content tb-partner-edit-frame" data-v-a5d9bc84 data-setting-key="partner_header_desc" data-setting-type="html">
+                  <p class="text-left text-white">Viện Công Nghệ
                      luôn đẩy mạnh kết nối với các doanh nghiệp, các tổ chức trong lĩnh vực đang đào tạo,
                     giúp sinh viên cập nhật kiến thức thực tế, rèn luyện kỹ năng nghề nghiệp, cơ hội việc làm sau khi
                     tốt nghiệp, hỗ trợ cho sinh viên khởi nghiệp.</p>
@@ -9349,131 +9392,79 @@
             <img
               src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/53716270747447323451695738375a615876746156.webp?v=1.2.1"
               data-setting-key="partner_header_image" data-setting-type="image"
+              class="tb-partner-edit-frame"
               alt="DHV - Trường Đại Học Hùng Vương TPHCM">
           </div>
         </div>
         <div class="partner-wrapper relative overflow-x-hidden my-4 md:!my-24" data-v-f31c483d>
+          <style>
+            @media (max-width: 991px) {
+              .header-area .header-small-mobile,
+              .header-area .header-small-mobile.opened,
+              .header-area .main-header-wrap,
+              .header-area .main-header-wrap > nav {
+                background-color: rgba(255, 255, 255, 1) !important;
+              }
+            }
+
+            .partner__list-partner-logo {
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 16px;
+              align-content: start;
+            }
+
+            .partner__list-partner-logo .logo-item {
+              background: #fff;
+              border-radius: 16px;
+              padding: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 120px;
+              box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            }
+
+            .partner__list-partner-logo .logo-item img {
+              width: 96%;
+              max-width: 260px;
+              max-height: 140px;
+              object-fit: contain;
+            }
+
+            @media (min-width: 1024px) {
+              .partner__list-partner-logo {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+              }
+
+              .partner__list-partner-logo .logo-item {
+                min-height: 140px;
+              }
+
+              .partner__list-partner-logo .logo-item img {
+                width: 98%;
+                max-width: 300px;
+                max-height: 160px;
+              }
+            }
+          </style>
           <div class="container flex flex-wrap gap-3 lg:!gap-12 xl:!gap-20" data-v-f31c483d>
             <div class="!hidden lg:!block flex-1" data-v-f31c483d>
-              <div class="partner__list-partner-logo" style="aspect-ratio:523/572;" data-v-f31c483d>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_1" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/5a4d756e42664c7a4c6652457973686e576366597a.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/5a4d756e42664c7a4c6652457973686e576366597a.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/5a4d756e42664c7a4c6652457973686e576366597a.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/5a4d756e42664c7a4c6652457973686e576366597a.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/5a4d756e42664c7a4c6652457973686e576366597a.webp?v=1.2.jpg"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_2" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a743550716239416e335a48574266387038763548.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a743550716239416e335a48574266387038763548.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a743550716239416e335a48574266387038763548.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a743550716239416e335a48574266387038763548.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a743550716239416e335a48574266387038763548.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_3" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/773832745f7142512d50743548547666684a517547.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/773832745f7142512d50743548547666684a517547.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/773832745f7142512d50743548547666684a517547.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/773832745f7142512d50743548547666684a517547.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/773832745f7142512d50743548547666684a517547.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_4" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/476a6870627376527a5353452d5938505836596c56.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/476a6870627376527a5353452d5938505836596c56.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/476a6870627376527a5353452d5938505836596c56.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/476a6870627376527a5353452d5938505836596c56.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/476a6870627376527a5353452d5938505836596c56.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_5" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/734b5562735065453249574f5a5a33656c592d524e.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/734b5562735065453249574f5a5a33656c592d524e.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/734b5562735065453249574f5a5a33656c592d524e.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/734b5562735065453249574f5a5a33656c592d524e.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/734b5562735065453249574f5a5a33656c592d524e.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_6" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4d6e39732d635f6d6e5547704354727774697a5446.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4d6e39732d635f6d6e5547704354727774697a5446.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4d6e39732d635f6d6e5547704354727774697a5446.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4d6e39732d635f6d6e5547704354727774697a5446.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4d6e39732d635f6d6e5547704354727774697a5446.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_7" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74635552684b324d504c6e75623573336630467542.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74635552684b324d504c6e75623573336630467542.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74635552684b324d504c6e75623573336630467542.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74635552684b324d504c6e75623573336630467542.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74635552684b324d504c6e75623573336630467542.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_8" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74474770735a466a50336e62464a4d426f53485558.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74474770735a466a50336e62464a4d426f53485558.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74474770735a466a50336e62464a4d426f53485558.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74474770735a466a50336e62464a4d426f53485558.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/74474770735a466a50336e62464a4d426f53485558.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_9" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a65636c437634393334613061546672645f372d71.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a65636c437634393334613061546672645f372d71.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a65636c437634393334613061546672645f372d71.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a65636c437634393334613061546672645f372d71.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a65636c437634393334613061546672645f372d71.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_10" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/6849783048503141566f6971634f73634b375f6932.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/6849783048503141566f6971634f73634b375f6932.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/6849783048503141566f6971634f73634b375f6932.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/6849783048503141566f6971634f73634b375f6932.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/6849783048503141566f6971634f73634b375f6932.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_11" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/2d3044474d73466a62497a66474d4737334a4d332d.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/2d3044474d73466a62497a66474d4737334a4d332d.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/2d3044474d73466a62497a66474d4737334a4d332d.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/2d3044474d73466a62497a66474d4737334a4d332d.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/2d3044474d73466a62497a66474d4737334a4d332d.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_12" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a674d7a30505464586a32483064654b39336c3347.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a674d7a30505464586a32483064654b39336c3347.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a674d7a30505464586a32483064654b39336c3347.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a674d7a30505464586a32483064654b39336c3347.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/7a674d7a30505464586a32483064654b39336c3347.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-                <div class="logo-item" data-v-f31c483d><img onerror="this.setAttribute('data-error', 1)"
-                    data-setting-key="partner_logo_13" data-setting-type="image"
-                    alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
-                    sizes="(max-width: 768px) 30vw, 20vw"
-                    srcset="/_ipx/w_154/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4e546533726849786c756850326d326c4c684b4777.webp?v=1.2.1 154w, /_ipx/w_173/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4e546533726849786c756850326d326c4c684b4777.webp?v=1.2.1 173w, /_ipx/w_308/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4e546533726849786c756850326d326c4c684b4777.webp?v=1.2.1 308w, /_ipx/w_346/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4e546533726849786c756850326d326c4c684b4777.webp?v=1.2.1 346w"
-                    class="w-full h-full object-cover aspect-square"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/4e546533726849786c756850326d326c4c684b4777.webp?v=1.2.1"
-                    data-v-f31c483d></div>
-              </div>
+              <div class="partner__list-partner-logo" style="aspect-ratio:523/572;" data-v-f31c483d></div>
             </div>
             <div class="partner__introduction w-full lg:w-6/12 flex flex-col justify-center" data-v-f31c483d>
-              <div class="title-section mb-5" data-v-f97399ec>
-                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div class="title-section mb-5" data-v-f97399ec style="position:relative;">
+                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; position:relative; z-index:2;">
                   <h2 class="section-title" data-v-f97399ec data-setting-key="partner_section_title" data-setting-type="html">Các đối tác</h2>
                   <button id="btnAddPartnerLogo" th:if="${isAdmin}" type="button" style="display:none; width:32px; height:32px; border-radius:50%; background:#2b4a73; color:#fff; border:none; cursor:pointer; font-size:20px; font-weight:700; line-height:1;" title="Thêm logo đối tác">+</button>
                 </div>
-                <div class="logo" data-v-f97399ec><img onerror="this.setAttribute('data-error', 1)"
+                <div class="logo" data-v-f97399ec style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:88px;opacity:.08;pointer-events:none;z-index:1;"><img onerror="this.setAttribute('data-error', 1)"
 
                     alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
                     sizes="(max-width: 768px) 20vw, 15vw"
-                    srcset="/_ipx/w_115/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1 115w, /_ipx/w_230/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1 230w"
-                    src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1"
+                    srcset="/assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png 115w, /assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png 230w"
+                    src="/assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png"
                     data-v-f97399ec></div>
               </div>
               <div class="description" data-v-f31c483d>
@@ -9494,7 +9485,7 @@
           <div
             class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 hidden lg:block h-full opacity-5 aspect-[272/604]"
             data-v-f31c483d><img class="w-full h-full"
-              src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1"
+              src="/assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png"
               alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-v-f31c483d></div>
         </div>
         <div class="bg-light-blue">
@@ -9509,8 +9500,8 @@
                       data-setting-key="news_section_logo" data-setting-type="image"
                       alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" data-nuxt-img
                       sizes="(max-width: 768px) 20vw, 15vw"
-                      srcset="/_ipx/w_115/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1 115w, /_ipx/w_230/https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1 230w"
-                      src="https://hung-vuong-prd.sgp1.digitaloceanspaces.com/hung-vuong/imgs/674e64495a6579376b4c46393971584d7236323731.webp?v=1.2.1"
+                      srcset="/assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png 115w, /assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png 230w"
+                      src="/assets/images/bg/674e64495a6579376b4c46393971584d7236323731.png"
                       data-v-f97399ec></div>
                 </div><a href="/news-event/news" class="hidden lg:inline-block" data-v-61496e24><button
                     class="css-ce4l2v ant-btn ant-btn-default primary common-btn" data-v-61496e24 type="button"
@@ -9836,10 +9827,13 @@
   <style>
     /* Ensure admin controls remain clickable in edit mode */
     #btnAddNews,
-    #partnerNewsCategoryBadge {
+    #partnerNewsCategoryBadge,
+    #btnAddPartnerLogo,
+    #btnToggleEdit,
+    #tb-admin-bar {
       position: relative;
       z-index: 1000001;
-      pointer-events: auto !important;
+      pointer-events: auto;
     }
 
     /* FIX: Card “ĐẠI HỌC” overlay che ảnh khi edit */
@@ -9927,6 +9921,25 @@
       border: none !important;
     }
 
+    /* Remove edit-mode frames around news title and images */
+    body.tb-edit-mode .news-event__header [data-setting-key],
+    body.tb-edit-mode .news-event__item__image img[data-setting-key] {
+      border: none !important;
+      background: transparent !important;
+    }
+
+    body.tb-edit-mode .news-event__header [data-setting-key]:hover,
+    body.tb-edit-mode .news-event__item__image img[data-setting-key]:hover {
+      border-color: transparent !important;
+      background: transparent !important;
+    }
+
+    body.tb-edit-mode .news-event__header [data-setting-key]::before,
+    body.tb-edit-mode .news-event__item__image img[data-setting-key]::before {
+      display: none !important;
+      content: none !important;
+    }
+
     /* Modal overlay always receives click/keyboard */
     #tb-editor-overlay {
       pointer-events: auto !important;
@@ -9963,6 +9976,9 @@
       aspect-ratio: 16 / 10;
       object-fit: cover;
       width: 100%;
+      height: 100%;
+      padding: 0;
+      display: block;
     }
 
     .news-event__list .news-event__item__content h3 {
@@ -10173,6 +10189,10 @@
         const addPartnerBtn = document.getElementById('btnAddPartnerLogo');
         if (addPartnerBtn) addPartnerBtn.style.display = on ? 'inline-block' : 'none';
 
+        if (on && typeof ensurePartnerAdminControls === 'function') {
+          ensurePartnerAdminControls();
+        }
+
         const deletePartnerButtons = document.querySelectorAll('.tb-delete-partner-logo');
         deletePartnerButtons.forEach((btn) => {
           btn.style.display = on ? 'inline-block' : 'none';
@@ -10180,21 +10200,53 @@
       }
 
       let on = false;
-      try { on = localStorage.getItem(KEY) === '1'; } catch (e) { }
-      setMode(on);
 
-      btn.addEventListener('click', function () {
-        on = !on;
-        setMode(on);
-      });
+      function bindAdminButtons() {
+        if (!window.__TB_IS_ADMIN) return;
 
-      // Add news button handler - opens category selector
-      const addNewsBtn = document.getElementById('btnAddNews');
-      if (addNewsBtn) {
-        addNewsBtn.addEventListener('click', function() {
-          openCategorySelector();
-        });
+        const toggleBtn = document.getElementById('btnToggleEdit');
+        if (toggleBtn && !toggleBtn.dataset.bound) {
+          toggleBtn.dataset.bound = '1';
+          toggleBtn.addEventListener('click', function () {
+            on = !on;
+            setMode(on);
+          });
+        }
+
+        const addNewsBtn = document.getElementById('btnAddNews');
+        if (addNewsBtn && !addNewsBtn.dataset.bound) {
+          addNewsBtn.dataset.bound = '1';
+          addNewsBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            openCategorySelector();
+          });
+        }
+
+        const addPartnerBtn = document.getElementById('btnAddPartnerLogo');
+        if (addPartnerBtn && !addPartnerBtn.dataset.bound) {
+          addPartnerBtn.dataset.bound = '1';
+          addPartnerBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            handleCreatePartnerLogo();
+          });
+        }
       }
+
+      function initPartnerAdminUi() {
+        try { on = localStorage.getItem(KEY) === '1'; } catch (e) { }
+        setMode(on);
+        bindAdminButtons();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPartnerAdminUi);
+      } else {
+        initPartnerAdminUi();
+      }
+
+      window.__tb_partner_ready = true;
 
       const partnerState = {
         desktopList: null,
@@ -10240,6 +10292,7 @@
       }
 
       function syncPartnerDesktopWithSettings(desktopList, settingLogos) {
+        if (!settingLogos || settingLogos.length === 0) return;
         const byKey = new Map(settingLogos.map((item) => [item.key, item.url]));
 
         Array.from(desktopList.querySelectorAll('.logo-item')).forEach((item) => {
@@ -10255,6 +10308,8 @@
             img.src = nextUrl;
             img.removeAttribute('srcset');
             img.removeAttribute('sizes');
+            img.classList.remove('object-cover', 'aspect-square');
+            img.classList.add('object-contain');
           }
         });
 
@@ -10271,7 +10326,7 @@
           img.setAttribute('data-setting-type', 'image');
           img.setAttribute('loading', 'lazy');
           img.setAttribute('alt', 'DHV - Trường Đại Học Hùng Vương TPHCM');
-          img.className = 'w-full h-full object-cover aspect-square';
+          img.className = 'w-full h-full object-contain';
           img.src = item.url;
 
           logoItem.appendChild(img);
@@ -10286,10 +10341,26 @@
         const settings = window.__TB_SETTINGS || {};
 
         const settingLogos = Object.keys(settings)
-          .filter((key) => /^partner_logo_\d+$/.test(key))
-          .sort((a, b) => Number(a.split('_').pop()) - Number(b.split('_').pop()))
+          .filter((key) => /^partner_logo_/i.test(key))
+          .sort((a, b) => {
+            const aNum = Number(String(a).split('_').pop());
+            const bNum = Number(String(b).split('_').pop());
+            if (Number.isFinite(aNum) && Number.isFinite(bNum)) return aNum - bNum;
+            return String(a).localeCompare(String(b));
+          })
           .map((key) => ({ key, url: String(settings[key] || '').trim() }))
           .filter((item) => item.url);
+
+        if (settingLogos.length > 1) {
+          settingLogos.sort((a, b) => a.key.localeCompare(b.key));
+        }
+
+        if (!settingLogos.length) {
+          if (!desktopList.querySelector('.tb-partner-empty-state')) {
+            desktopList.innerHTML = '';
+          }
+          return;
+        }
 
         syncPartnerDesktopWithSettings(desktopList, settingLogos);
 
@@ -10369,7 +10440,16 @@
         item.className = 'logo-item';
         item.setAttribute('data-v-f31c483d', '');
         item.style.position = 'relative';
-        item.innerHTML = `<img data-setting-key="${newKey}" data-setting-type="image" alt="DHV - Trường Đại Học Hùng Vương TPHCM" loading="lazy" class="w-full h-full object-cover aspect-square" src="${next.replace(/"/g, '&quot;')}">`;
+
+        const img = document.createElement('img');
+        img.setAttribute('data-setting-key', newKey);
+        img.setAttribute('data-setting-type', 'image');
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('alt', 'DHV - Trường Đại Học Hùng Vương TPHCM');
+        img.className = 'w-full h-full object-contain';
+        img.src = next;
+
+        item.appendChild(img);
         currentRefs.desktopList.appendChild(item);
 
         try {
@@ -10414,12 +10494,13 @@
         });
 
         const addPartnerBtn = document.getElementById('btnAddPartnerLogo');
-        if (addPartnerBtn) {
-          addPartnerBtn.onclick = (event) => {
+        if (addPartnerBtn && !addPartnerBtn.dataset.bound) {
+          addPartnerBtn.dataset.bound = '1';
+          addPartnerBtn.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
             handleCreatePartnerLogo();
-          };
+          });
         }
       }
 
@@ -10644,6 +10725,24 @@
         try { reinitSwiper(); } catch (e) {}
       });
 
+      function setNewsSwiperSlides() {
+        const root = document.querySelector('.news-event__list .swiper');
+        if (!root || !root.swiper) return;
+
+        const isMobile = window.innerWidth < 768;
+        if (!root.swiper.params) return;
+
+        root.swiper.params.slidesPerView = isMobile ? 1 : 1.1;
+        root.swiper.params.spaceBetween = isMobile ? 16 : 16;
+        root.swiper.update();
+      }
+
+      window.addEventListener('resize', function () {
+        setNewsSwiperSlides();
+      });
+
+      setTimeout(setNewsSwiperSlides, 0);
+
       async function getDeletedNewsUrls() {
         const raw = (window.__TB_SETTINGS || {}).partner_deleted_news_urls;
         if (!raw) return [];
@@ -10713,10 +10812,11 @@
       }
 
       function renderPartnerWithRetry() {
-        if (window.Swiper) {
-          renderPartnerMobileFromDesktop();
-          return;
-        }
+        // Render immediately (desktop list should not depend on Swiper)
+        renderPartnerMobileFromDesktop();
+
+        // If Swiper isn't ready yet, retry to re-init the slider only
+        if (window.Swiper) return;
 
         let retries = 0;
         const timer = window.setInterval(() => {
@@ -10732,8 +10832,11 @@
 
       window.renderPartnerMobileFromDesktop = renderPartnerMobileFromDesktop;
       renderPartnerWithRetry();
-      ensurePartnerAdminControls();
+      if (typeof ensurePartnerAdminControls === 'function') {
+        ensurePartnerAdminControls();
+      }
       setMode(document.body.classList.contains('tb-edit-mode'));
+      bindAdminButtons();
     })();
   </script>
 
