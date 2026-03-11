@@ -20,12 +20,11 @@ RUN ./mvnw clean package -DskipTests
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
+# Install bash for better debugging
+RUN apk add --no-cache bash
+
 # Copy jar from build stage
 COPY --from=build /app/target/web-clone-0.0.1-SNAPSHOT.jar app.jar
-
-# Copy entrypoint script
-COPY entrypoint.sh .
-RUN chmod +x entrypoint.sh
 
 # Set default PORT if not provided
 ENV PORT=8080
@@ -33,5 +32,5 @@ ENV PORT=8080
 # Expose port
 EXPOSE 8080
 
-# Use entrypoint script
-ENTRYPOINT ["./entrypoint.sh"]
+# Simple direct command - no script
+CMD ["sh", "-c", "echo 'Container started' && ls -la && java -Dserver.port=${PORT} -jar app.jar"]
