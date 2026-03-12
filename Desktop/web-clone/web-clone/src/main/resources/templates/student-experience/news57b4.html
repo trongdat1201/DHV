@@ -9251,7 +9251,7 @@
                             </svg></span></div>
                         <div class="submenu" data-v-39de9c64>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
-                              href="../faculty-introduction/faculty-overview.html" class="child-menu-item"
+                              href="/faculty-introduction/faculty-overview.html.html" class="child-menu-item"
                               data-setting-key="idx_00003" data-setting-type="inline" data-v-39de9c64>Tổng quan</a></div>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
                               href="../faculty-introduction/hr-organizational-structure3169.html?section=hr-organizational-structure"
@@ -9307,7 +9307,7 @@
                             </svg></span></div>
                         <div class="submenu" data-v-39de9c64>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
-                              href="../scientific-research/student" class="child-menu-item" data-v-39de9c64>Sinh
+                              href="/scientific-research/student" class="child-menu-item" data-v-39de9c64>Sinh
                               viên</a></div>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><span
                               class="child-menu-item cursor-pointer !text-inherit" data-v-39de9c64>Giảng
@@ -9340,7 +9340,7 @@
                             </svg></span></div>
                         <div class="submenu" data-v-39de9c64>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
-                              href="partner" class="child-menu-item" data-v-39de9c64>Đối tác</a>
+                              href="/student-experience/partner" class="child-menu-item" data-v-39de9c64>Đối tác</a>
                           </div>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
                               aria-current="page" href="/student-experience/news12da?type=activity"
@@ -9365,16 +9365,16 @@
                             </svg></span></div>
                         <div class="submenu" data-v-39de9c64>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
-                              href="../news-event/news" class="child-menu-item" data-v-39de9c64>Tin
+                              href="/news-event/news.html" class="child-menu-item" data-v-39de9c64>Tin
                               tức</a></div>
                           <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
-                              href="../news-event/event" class="child-menu-item" data-v-39de9c64>Sự
+                              href="/news-event/event.html" class="child-menu-item" data-v-39de9c64>Sự
                               kiện</a></div>
                         </div>
                       </li>
                       <li class="angle-shape" data-v-39de9c64>
                         <div class="!flex !justify-center !items-center gap-2 menu-item" data-v-39de9c64><a
-                            href="../alumni" class="" data-v-39de9c64><span data-v-39de9c64>Cựu sinh <br
+                            href="/alumni" class="" data-v-39de9c64><span data-v-39de9c64>Cựu sinh <br
                                 class='hidden lg:block' /> viên</span></a></div>
                       </li>
                       <li class="select-language flex items-center" data-v-39de9c64>
@@ -9504,13 +9504,13 @@
                 <div class="child-menu-item" data-v-39de9c64><a href="../faculty-introduction/faculty-overview"
                     class="" data-v-39de9c64>Tổng quan về khoa</a></div>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="../faculty-introduction/hr-organizational-structure3169?section=hr-organizational-structure"
+                    href="../faculty-introduction/hr-organizational-structure3169.html?section=hr-organizational-structure"
                     class="" data-v-39de9c64>Cơ cấu tổ chức nhân sự</a></div>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="../faculty-introduction/hr-organizational-structurec425?section=growth-direction" class=""
+                    href="../faculty-introduction/hr-organizational-structurec425.html?section=growth-direction" class=""
                     data-v-39de9c64>Định hướng phát triển</a></div>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="../faculty-introduction/hr-organizational-structure3223?section=admissions-information"
+                    href="../faculty-introduction/hr-organizational-structure3223.html?section=admissions-information"
                     class="" data-v-39de9c64>Thông tin tuyển sinh</a></div>
               </div>
             </div>
@@ -9522,8 +9522,14 @@
                   </svg></span></div>
               <div class="child-menu" data-v-39de9c64>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="../educational-programe0d6?program=dai-hoc" class="" data-v-39de9c64>Đại
+                    href="/educational-program/dai-hoc" class="" data-v-39de9c64>Đại
                     học</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a
+                    href="/educational-program/sau-dai-hoc" class="" data-v-39de9c64>Sau đại học</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a
+                    href="/educational-program/dao-tao-ngan-han" class="" data-v-39de9c64>Đào tạo ngắn hạn</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a
+                    href="/educational-program/chuong-trinh-lien-ket" class="" data-v-39de9c64>Chương trình liên kết</a></div>
               </div>
             </div>
             <div class="mobile-menu-item" data-v-39de9c64>
@@ -10082,17 +10088,26 @@
         menuToggle.dataset.bound = '1';
 
         const setMobileMenuState = (isOpen) => {
-          mobileHeader.classList.toggle('opened', isOpen);
           mobileMenu.classList.toggle('opened', isOpen);
           menuToggle.setAttribute('aria-expanded', String(isOpen));
           menuToggle.setAttribute('aria-label', isOpen ? 'Đóng menu' : 'Mở menu');
           document.body.style.overflow = isOpen ? 'hidden' : '';
         };
 
-        setMobileMenuState(false);
+        const headerRoot = menuToggle.closest('.header-small-mobile') || mobileHeader;
+        const setHeaderState = (isOpen) => {
+          headerRoot.classList.toggle('opened', isOpen);
+        };
+
+        const setState = (isOpen) => {
+          setHeaderState(isOpen);
+          setMobileMenuState(isOpen);
+        };
+
+        setState(false);
 
         menuToggle.addEventListener('click', function () {
-          setMobileMenuState(!mobileMenu.classList.contains('opened'));
+          setState(!mobileMenu.classList.contains('opened'));
         });
 
         mobileMenu.querySelectorAll('.mobile-menu-item > .menu-item-header').forEach((header) => {
@@ -10102,7 +10117,7 @@
 
           header.addEventListener('click', function (event) {
             if (event.target.closest('a')) {
-              setMobileMenuState(false);
+              setState(false);
               return;
             }
             item.classList.toggle('collapsed');
@@ -10119,12 +10134,12 @@
 
         mobileMenu.querySelectorAll('a').forEach((link) => {
           link.addEventListener('click', function () {
-            setMobileMenuState(false);
+            setState(false);
           });
         });
 
         window.addEventListener('resize', function () {
-          if (window.innerWidth >= 992) setMobileMenuState(false);
+          if (window.innerWidth >= 992) setState(false);
         });
 
         return true;

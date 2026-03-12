@@ -10476,6 +10476,74 @@
   });
   /*]]>*/
   </script>
+
+  <script>
+    (function () {
+      function initNewsDetailMobileMenu() {
+        const headerMobile = document.querySelector('.header-small-mobile');
+        const mobileMenu = document.getElementById('newsDetailMobileMenuPanel');
+        const toggleBtn = document.getElementById('newsDetailMobileMenuToggle');
+        if (!headerMobile || !mobileMenu || !toggleBtn) return false;
+        if (toggleBtn.dataset.bound === '1') return true;
+        toggleBtn.dataset.bound = '1';
+
+        const headerRoot = toggleBtn.closest('.header-small-mobile') || headerMobile;
+
+        const setState = (opened) => {
+          headerRoot.classList.toggle('opened', opened);
+          mobileMenu.classList.toggle('opened', opened);
+          toggleBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+          toggleBtn.setAttribute('aria-label', opened ? 'Đóng menu' : 'Mở menu');
+          document.body.style.overflow = opened ? 'hidden' : '';
+        };
+
+        setState(false);
+
+        toggleBtn.addEventListener('click', () => {
+          setState(!mobileMenu.classList.contains('opened'));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          if (link.dataset.menuBound === '1') return;
+          link.dataset.menuBound = '1';
+          link.addEventListener('click', () => setState(false));
+        });
+
+        mobileMenu.querySelectorAll('.menu-item-header, .child-menu-item-header').forEach((header) => {
+          if (header.dataset.menuBound === '1') return;
+          header.dataset.menuBound = '1';
+          const arrow = header.querySelector('.arrow-icon');
+          if (!arrow) return;
+          header.addEventListener('click', (event) => {
+            if (event.target.closest('a')) return;
+            const menuItem = header.closest('.mobile-menu-item, .child-menu-item');
+            if (menuItem) menuItem.classList.toggle('collapsed');
+          });
+        });
+
+        if (window.__newsDetailMenuResizeBound !== true) {
+          window.__newsDetailMenuResizeBound = true;
+          window.addEventListener('resize', () => {
+            if (window.innerWidth >= 992) setState(false);
+          });
+        }
+
+        return true;
+      }
+
+      const boot = () => {
+        if (initNewsDetailMobileMenu()) return;
+        setTimeout(initNewsDetailMobileMenu, 120);
+        setTimeout(initNewsDetailMobileMenu, 600);
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot);
+      } else {
+        boot();
+      }
+    })();
+  </script>
   
   <script src="../../../aijob.com.vn/shared/chat/chat-widget.js"></script>
 </body>

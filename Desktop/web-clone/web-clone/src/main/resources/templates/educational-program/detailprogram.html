@@ -9621,16 +9621,16 @@
                   </svg></span></div>
               <div class="child-menu" data-v-39de9c64>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="/faculty-introduction/faculty-overview" class="" data-v-39de9c64>Tổng quan về
+                    href="/faculty-introduction/faculty-overview.html" class="" data-v-39de9c64>Tổng quan về
                     khoa</a></div>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="/faculty-introduction/hr-organizational-structure3169?section=hr-organizational-structure"
+                    href="/faculty-introduction/hr-organizational-structure3169.html?section=hr-organizational-structure"
                     class="" data-v-39de9c64>Cơ cấu tổ chức nhân sự</a></div>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="/faculty-introduction/hr-organizational-structurec425?section=growth-direction"
+                    href="/faculty-introduction/hr-organizational-structurec425.html?section=growth-direction"
                     class="" data-v-39de9c64>Định hướng phát triển</a></div>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="/faculty-introduction/hr-organizational-structure3223?section=admissions-information"
+                    href="/faculty-introduction/hr-organizational-structure3223.html?section=admissions-information"
                     class="" data-v-39de9c64>Thông tin tuyển sinh</a></div>
               </div>
             </div>
@@ -9642,8 +9642,14 @@
                   </svg></span></div>
               <div class="child-menu" data-v-39de9c64>
                 <div class="child-menu-item" data-v-39de9c64><a
-                    href="/educational-programe0d6?program=dai-hoc" class="" data-v-39de9c64>Đại
+                    href="/educational-program/dai-hoc" class="" data-v-39de9c64>Đại
                     học</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a
+                    href="/educational-program/sau-dai-hoc" class="" data-v-39de9c64>Sau đại học</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a
+                    href="/educational-program/dao-tao-ngan-han" class="" data-v-39de9c64>Đào tạo ngắn hạn</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a
+                    href="/educational-program/chuong-trinh-lien-ket" class="" data-v-39de9c64>Chương trình liên kết</a></div>
               </div>
             </div>
             <div class="mobile-menu-item" data-v-39de9c64>
@@ -10373,8 +10379,10 @@
         var panel = document.getElementById('detailProgramMobileMenuPanel');
         if (!mobileHeader || !toggle || !panel) return;
 
+        var headerRoot = toggle.closest('.header-small-mobile') || mobileHeader;
+
         var setState = function (opened) {
-          mobileHeader.classList.toggle('opened', opened);
+          headerRoot.classList.toggle('opened', opened);
           panel.classList.toggle('opened', opened);
           toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
           toggle.setAttribute('aria-label', opened ? 'Đóng menu' : 'Mở menu');

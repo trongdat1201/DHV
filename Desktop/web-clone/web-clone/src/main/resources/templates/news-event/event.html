@@ -9734,10 +9734,10 @@
                     <path d="M2.00003 0L0.590027 1.41L5.17003 6L0.590027 10.59L2.00003 12L8.00003 6L2.00003 0Z"></path>
                   </svg></span></div>
               <div class="child-menu" data-v-39de9c64>
-                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/faculty-overview" class="" data-v-39de9c64>Tổng quan</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/hr-organizational-structure3169?section=hr-organizational-structure" class="" data-v-39de9c64>Cơ cấu tổ chức nhân sự</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/hr-organizational-structurec425?section=growth-direction" class="" data-v-39de9c64>Định hướng phát triển</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/hr-organizational-structure3223?section=admissions-information" class="" data-v-39de9c64>Thông tin tuyển sinh</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/faculty-overview.html" class="" data-v-39de9c64>Tổng quan</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/hr-organizational-structure3169.html?section=hr-organizational-structure" class="" data-v-39de9c64>Cơ cấu tổ chức nhân sự</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/hr-organizational-structurec425.html?section=growth-direction" class="" data-v-39de9c64>Định hướng phát triển</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/faculty-introduction/hr-organizational-structure3223.html?section=admissions-information" class="" data-v-39de9c64>Thông tin tuyển sinh</a></div>
               </div>
             </div>
             <div class="mobile-menu-item" data-v-39de9c64>
@@ -9747,10 +9747,10 @@
                     <path d="M2.00003 0L0.590027 1.41L5.17003 6L0.590027 10.59L2.00003 12L8.00003 6L2.00003 0Z"></path>
                   </svg></span></div>
               <div class="child-menu" data-v-39de9c64>
-                <div class="child-menu-item" data-v-39de9c64><a href="/educational-programe0d6?program=dai-hoc" class="" data-v-39de9c64>Đại học</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program" class="" data-v-39de9c64>Sau đại học</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program" class="" data-v-39de9c64>Đào tạo ngắn hạn</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program" class="" data-v-39de9c64>Chương trình liên kết</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program/dai-hoc" class="" data-v-39de9c64>Đại học</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program/sau-dai-hoc" class="" data-v-39de9c64>Sau đại học</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program/dao-tao-ngan-han" class="" data-v-39de9c64>Đào tạo ngắn hạn</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/educational-program/chuong-trinh-lien-ket" class="" data-v-39de9c64>Chương trình liên kết</a></div>
               </div>
             </div>
             <div class="mobile-menu-item" data-v-39de9c64>
@@ -9793,8 +9793,8 @@
                     <path d="M2.00003 0L0.590027 1.41L5.17003 6L0.590027 10.59L2.00003 12L8.00003 6L2.00003 0Z"></path>
                   </svg></span></div>
               <div class="child-menu" data-v-39de9c64>
-                <div class="child-menu-item" data-v-39de9c64><a href="/news-event/news" class="" data-v-39de9c64>Tin tức</a></div>
-                <div class="child-menu-item" data-v-39de9c64><a aria-current="page" href="/news-event/event" class="router-link-active router-link-exact-active" data-v-39de9c64>Sự kiện</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a href="/news-event/news.html" class="" data-v-39de9c64>Tin tức</a></div>
+                <div class="child-menu-item" data-v-39de9c64><a aria-current="page" href="/news-event/event.html" class="router-link-active router-link-exact-active" data-v-39de9c64>Sự kiện</a></div>
               </div>
             </div>
             <div class="mobile-menu-item" data-v-39de9c64>
@@ -11388,23 +11388,32 @@
       const panel = document.getElementById('eventMobileMenuPanel');
       if (!mobileHeader || !toggle || !panel) return;
 
+      const headerRoot = toggle.closest('.header-small-mobile') || mobileHeader;
+
       const setState = (opened) => {
-        mobileHeader.classList.toggle('opened', opened);
+        headerRoot.classList.toggle('opened', opened);
         panel.classList.toggle('opened', opened);
         toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
         toggle.setAttribute('aria-label', opened ? 'Đóng menu' : 'Mở menu');
         document.body.style.overflow = opened ? 'hidden' : '';
       };
 
-      toggle.addEventListener('click', () => {
-        setState(!panel.classList.contains('opened'));
-      });
+      if (toggle.dataset.menuBound !== '1') {
+        toggle.dataset.menuBound = '1';
+        toggle.addEventListener('click', () => {
+          setState(!panel.classList.contains('opened'));
+        });
+      }
 
       panel.querySelectorAll('a').forEach((link) => {
+        if (link.dataset.menuBound === '1') return;
+        link.dataset.menuBound = '1';
         link.addEventListener('click', () => setState(false));
       });
 
       panel.querySelectorAll('.menu-item-header, .child-menu-item-header').forEach((header) => {
+        if (header.dataset.menuBound === '1') return;
+        header.dataset.menuBound = '1';
         const arrow = header.querySelector('.arrow-icon');
         if (!arrow) return;
         header.addEventListener('click', (event) => {
@@ -11414,9 +11423,12 @@
         });
       });
 
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 992) setState(false);
-      });
+      if (window.__eventMenuResizeBound !== true) {
+        window.__eventMenuResizeBound = true;
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 992) setState(false);
+        });
+      }
     }
 
     function updateCheckboxStateClass(input) {

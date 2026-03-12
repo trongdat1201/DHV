@@ -9922,21 +9922,21 @@
               <div class="child-menu" data-v-39de9c64>
                 
                 <div class="child-menu-item" data-v-39de9c64>
-                  <a href="/faculty-introduction/faculty-overview" class="" data-v-39de9c64>Tổng quan về
+                  <a href="/faculty-introduction/faculty-overview.html" class="" data-v-39de9c64>Tổng quan về
                     khoa</a>
                 </div>
                 <div class="child-menu-item" data-v-39de9c64>
                   <a
-                    href="/faculty-introduction/hr-organizational-structure3169?section=hr-organizational-structure"
+                    href="/faculty-introduction/hr-organizational-structure3169.html?section=hr-organizational-structure"
                     class="" data-v-39de9c64>Cơ cấu tổ chức nhân sự</a>
                 </div>
                 <div class="child-menu-item" data-v-39de9c64>
-                  <a href="/faculty-introduction/hr-organizational-structurec425?section=growth-direction"
+                  <a href="/faculty-introduction/hr-organizational-structurec425.html?section=growth-direction"
                     class="" data-v-39de9c64>Định hướng phát triển</a>
                 </div>
                 <div class="child-menu-item" data-v-39de9c64>
                   <a
-                    href="/faculty-introduction/hr-organizational-structure3223?section=admissions-information"
+                    href="/faculty-introduction/hr-organizational-structure3223.html?section=admissions-information"
                     class="" data-v-39de9c64>Thông tin tuyển sinh</a>
                 </div>
                 
@@ -9953,10 +9953,19 @@
               <div class="child-menu" data-v-39de9c64>
                 
                 <div class="child-menu-item" data-v-39de9c64>
-                  <a href="/educational-programe0d6?program=dai-hoc" class="" data-v-39de9c64>Đại
+                  <a href="/educational-program/dai-hoc" class="" data-v-39de9c64>Đại
                     học</a>
                 </div>
-                
+                <div class="child-menu-item" data-v-39de9c64>
+                  <a href="/educational-program/sau-dai-hoc" class="" data-v-39de9c64>Sau đại học</a>
+                </div>
+                <div class="child-menu-item" data-v-39de9c64>
+                  <a href="/educational-program/dao-tao-ngan-han" class="" data-v-39de9c64>Đào tạo ngắn hạn</a>
+                </div>
+                <div class="child-menu-item" data-v-39de9c64>
+                  <a href="/educational-program/chuong-trinh-lien-ket" class="" data-v-39de9c64>Chương trình liên kết</a>
+                </div>
+
               </div>
             </div>
             <div class="mobile-menu-item" data-v-39de9c64>
@@ -10027,11 +10036,11 @@
               <div class="child-menu" data-v-39de9c64>
                 
                 <div class="child-menu-item" data-v-39de9c64>
-                  <a aria-current="page" href="/news-event/news"
+                  <a aria-current="page" href="/news-event/news.html"
                     class="router-link-active router-link-exact-active" data-v-39de9c64>Tin tức</a>
                 </div>
                 <div class="child-menu-item" data-v-39de9c64>
-                  <a href="/news-event/event" class="" data-v-39de9c64>Sự kiện</a>
+                  <a href="/news-event/event.html" class="" data-v-39de9c64>Sự kiện</a>
                 </div>
                 
               </div>
@@ -13515,8 +13524,10 @@
       const panel = document.getElementById('newsMobileMenuPanel');
       if (!mobileHeader || !toggle || !panel) return;
 
+      const headerRoot = toggle.closest('.header-small-mobile') || mobileHeader;
+
       const setState = (opened) => {
-        mobileHeader.classList.toggle('opened', opened);
+        headerRoot.classList.toggle('opened', opened);
         panel.classList.toggle('opened', opened);
         toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
         toggle.setAttribute('aria-label', opened ? 'Đóng menu' : 'Mở menu');
