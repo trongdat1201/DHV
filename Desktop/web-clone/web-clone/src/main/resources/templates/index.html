@@ -5081,6 +5081,19 @@
       background: #2b4a73;
     }
 
+    @media (max-width: 991px) {
+      .news-event .read-more-mobile .common-btn {
+        background-color: #2b4a73;
+        border-color: #2b4a73;
+        color: #fff;
+      }
+
+      .news-event .read-more-mobile .common-btn .arrow-two-color {
+        fill: #fff;
+        color: #fff;
+      }
+    }
+
     .ant-spin-nested-loading {
       height: 100%;
     }
@@ -9308,8 +9321,8 @@
 
                 <a aria-current="page" aria-label="Logo header" class="router-link-active router-link-exact-active"
                   data-v-39de9c64="" href="/"><img alt="DHV - Trường Đại Học Hùng Vương TPHCM"
-                    class="h-full inline-block" data-v-39de9c64="" loading="lazy"
-                    src="/images/download-removebg-preview.png" /></a>
+                    class="h-full inline-block" data-setting-key="logo_header" data-setting-type="image"
+                    data-v-39de9c64="" loading="lazy" src="/images/download-removebg-preview.png" /></a>
               </div>
               <div class="flex-1 flex justify-center" data-v-39de9c64="">
                 <div class="main-menu text-center" data-v-39de9c64="">
@@ -13389,6 +13402,7 @@
           if (img.classList.contains('flag-img') || img.closest('.locale-selector') || img.closest('.select-language')) return;
 
           let key = img.getAttribute('data-setting-key');
+          if (key === 'logo_header') return;
           if (key) { used.add(key); return; }
 
           // deterministic key by DOM order (same HTML => same keys)
