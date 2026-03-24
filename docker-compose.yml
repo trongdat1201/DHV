@@ -1,0 +1,42 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: dhv-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: DHV
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: ghcr.io/${GHCR_REPO}:latest
+    container_name: dhv-app
+    restart: always
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      PORT: 8080
+      DB_URL: jdbc:mysql://mysql:3306/DHV
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD}
+      JPA_DDL_AUTO: update
+      JPA_SHOW_SQL: "false"
+      LOG_LEVEL: WARN
+      APP_LOG_LEVEL: INFO
+      THYMELEAF_CACHE: "true"
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - upload_data:/app/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
+  upload_data:
