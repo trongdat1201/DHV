@@ -1,0 +1,112 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=
+            type=raw,value=latest
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose.yml to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "docker-compose.yml"
+          target: "/opt/dhv"
+
+      - name: Copy nginx config to server (optional)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "nginx/dhv-web.conf"
+          target: "/opt/dhv"
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /opt/dhv
+
+            # Install Nginx site config on first deploy (avoid overwriting certbot-managed HTTPS config later).
+            if [ ! -f /etc/nginx/sites-available/dhv-web ]; then
+              sudo cp -f /opt/dhv/dhv-web.conf /etc/nginx/sites-available/dhv-web
+              sudo ln -sf /etc/nginx/sites-available/dhv-web /etc/nginx/sites-enabled/
+              sudo rm -f /etc/nginx/sites-enabled/default || true
+              sudo nginx -t && sudo systemctl reload nginx
+            fi
+
+            # Write env file with secrets
+            cat > .env << 'ENVEOF'
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            GHCR_REPO=${{ github.repository }}
+            ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}
+            ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}
+            ENVEOF
+
+            # Login to GHCR and pull latest
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
+            docker compose pull app
+
+            # Restart only the app (MySQL stays running)
+            docker compose up -d
+
+            # Verify app starts
+            echo "Waiting for app to start..."
+            for i in $(seq 1 30); do
+              curl -sf http://127.0.0.1:8080 > /dev/null && echo "App is up!" && break
+              sleep 2
+            done
+
+            # Clean up old images
+            docker image prune -f

@@ -1,6 +1,11 @@
 target/
-!target/web-clone-0.0.1-SNAPSHOT.jar
 .git/
 .gitignore
 *.md
 .DS_Store
+.env
+uploads/
+nginx/
+.github/
+.claude/
+.gitnexus/
