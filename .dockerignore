@@ -1,0 +1,11 @@
+target/
+.git/
+.gitignore
+*.md
+.DS_Store
+.env
+uploads/
+nginx/
+.github/
+.claude/
+.gitnexus/
